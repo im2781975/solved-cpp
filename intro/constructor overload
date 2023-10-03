@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+class construct
+{ 
+    public:
+    float area; 
+    construct()
+    {
+    //Constructor with no parameters
+        area = 0;
+    }
+    construct(int a, int b)
+    {
+    //Constructor with two parameters
+        area = a * b;
+    }
+    void disp()
+    {
+        cout<< area<<"\n";
+    }
+};
+int main()
+{
+    //Constructor Overloading with two different constructors of class name
+    construct c;
+    construct c2( 10, 20);
+      
+    c.disp();
+    c2.disp();
+}
