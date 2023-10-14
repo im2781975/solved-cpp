@@ -1,0 +1,28 @@
+//the use of std::find_first_of 
+#include<iostream> 
+#include<vector> 
+#include<algorithm> 
+using namespace std; 
+ 
+bool Pred (int a, int b) 
+{ 
+    if ( a % b == 0) { 
+        return 1; 
+    } else { 
+        return 0; 
+    } 
+} 
+int main() 
+{
+    vector<int>v = {1, 5, 7, 11, 13, 15, 30, 30, 7} , i; 
+  
+    vector<int>v1 = {2, 3, 4}; 
+  
+    vector<int>::iterator ip; 
+    ip = std::find_first_of(v.begin(), v.end(), v1.begin(), 
+         v1.end(), Pred); 
+  
+    cout << *ip << "\n"; 
+  
+    return 0; 
+} 
