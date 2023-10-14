@@ -1,0 +1,39 @@
+// std :: adjacent_find'
+#include <algorithm>
+#include <iostream>
+#include <vector>
+using namespace std;
+int main()
+{
+    std::vector<int> vec{0, 1, 2, 5, 40, 40, 41, 41, 5 };
+ 
+    int range1 = 5;
+    int range2 = 9;
+ 
+    std::vector<int>::iterator it;
+ 
+    // Iterating from 0 to range1,
+    // till we get a decreasing element
+    it = adjacent_find(vec.begin(),vec.begin() + range1,greater<int>());
+    if (it == vec.begin() + range1) 
+    {
+          cout <<"Sorted in the range :"<<range1 << "\n";
+    }
+    else
+    {
+    cout << "Not sorted in the range : " << range1 <<"\n";
+    }
+ 
+    // Iterating from 0 to range2,
+    // till we get a decreasing element
+    it = std::adjacent_find(vec.begin(),vec.begin() + range2, std::greater<int>());
+ 
+    if (it == vec.begin() + range2) 
+    {
+        std::cout << "Sorted in the range : " << range2 << "\n";
+    }
+    else
+    {
+        cout << "Not sorted in the range : " << range2 << "\n";
+    }
+}
