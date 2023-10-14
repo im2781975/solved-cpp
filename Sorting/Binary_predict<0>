@@ -1,0 +1,39 @@
+// CPP program to illustrate
+// std::is_sorted
+// using binary predicate
+#include <iostream>
+#include <algorithm>
+ 
+using namespace std;
+ 
+// Binary predicate
+bool ignore_case(char a, char b)
+{
+    // Converts both characters to lowercase and checks if a <= b
+    return (tolower(a) <= tolower(b));
+}
+ 
+// Function that checks if string is sorted while ignoring the case
+bool check_if_sorted(string str)
+{
+    // Function call to is_sorted with binary predicate ignore_case
+    return is_sorted(str.begin(), str.end(), ignore_case);
+}
+ 
+// Driver code
+int main()
+{
+    // String which is to be checked
+    string str = "tOY";
+ 
+    // Function returned true, string is sorted
+    if (check_if_sorted(str)) {
+        cout << "Sorted";
+    }
+    // Function returned false, string not sorted
+    else {
+        cout << "Not sorted";
+    }
+ 
+    return 0;
+}
