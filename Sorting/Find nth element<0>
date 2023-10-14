@@ -1,0 +1,100 @@
+
+// C++ program to find the median of the vector 
+#include <iostream> 
+#include <algorithm> 
+#include <vector> 
+using namespace std; 
+int main() 
+{ 
+    vector<int> v = { 3, 2, 10, 45, 33, 56, 23, 47, 60 }, i; 
+  
+    // Using std::nth_element with n as v.size()/2 + 1 
+    std::nth_element(v.begin(), v.begin() + v.size() / 2, v.end()); 
+  
+    cout << "The median of the array is " << v[v.size() / 2]; 
+  
+    return 0; 
+} 
+// C++ program to find first n largest numbers 
+#include <iostream> 
+#include <algorithm> 
+using namespace std; 
+int main() 
+{ 
+    int v[] = { 30, 20, 50, 60, 70, 10, 80, 40 }, i; 
+  
+    // Using std::nth_element with n as 2 
+    std::nth_element(v, v + 1, v + 8, std::greater<int>()); 
+  
+    // Since, n is 2 so first 2 elements will be the largest 
+    // among all the array elements 
+    // Displaying First 2 elements 
+    for (i = 0; i < 2; ++i)  
+    { 
+        cout << v[i] << " "; 
+    } 
+    return 0; 
+} 
+// C++ program to find first n smallest numbers 
+#include <iostream> 
+#include <algorithm> 
+using namespace std; 
+int main() 
+{ 
+    int v[] = { 30, 20, 10, 40, 60, 50, 70, 80 }, i; 
+  
+    // Using std::nth_element with n as 3 
+    std::nth_element(v, v + 2, v + 8); 
+  
+    // Since, n is 3 so now first three numbers will be the 
+    // three smallest numbers in the whole array 
+    // Displaying first three smallest number 
+    for (i = 0; i < 3; ++i)  
+    { 
+        cout << v[i] << " "; 
+    } 
+    return 0; 
+} 
+// C++ program to demonstrate the use of std::nth_element 
+#include <iostream> 
+#include <algorithm> 
+using namespace std; 
+  
+// Defining the BinaryFunction 
+bool comp(int a, int b) 
+{ 
+    return (a < b); 
+} 
+int main() 
+{ 
+    int v[] = { 3, 2, 10, 45, 33, 56, 23, 47 }, i; 
+  
+    // Using std::nth_element with n as 6 
+    std::nth_element(v, v + 5, v + 8, comp); 
+  
+    // Since, n is 6 so 6th element should be the same 
+    // as the sixth element present if we sort this array 
+    // Sorted Array 
+    /* 2 3 10 23 33 45 47 56 */
+    for (i = 0; i < 8; ++i) { 
+        cout << v[i] << " "; 
+    } 
+    return 0; 
+} 
+// C++ program to demonstrate the use of std::nth_element 
+#include <iostream> 
+#include <algorithm> 
+using namespace std; 
+int main() 
+{ 
+    int v[] = { 3, 2, 10, 45, 33, 56, 23, 47 }, i; 
+  
+    // Using std::nth_element with n as 5 
+    std::nth_element(v, v + 4, v + 8); 
+  
+    // Since, n is 5 so 5th element should be sorted 
+    for (i = 0; i < 8; ++i) { 
+        cout << v[i] << " "; 
+    } 
+    return 0; 
+} 
