@@ -1,0 +1,24 @@
+// C++ program to demonstrate the use of
+// std::partial_sort
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+int main()
+{
+    vector<int> v = { 10, 45, 60, 78, 23, 21, 30 };
+ 
+    vector<int>::iterator ip;
+ 
+    // Using std::partial_sort
+    std::partial_sort(v.begin(), v.begin() + 1, v.end(),
+                      greater<int>());
+ 
+    // Displaying the largest element after applying
+    // std::partial_sort
+ 
+    ip = v.begin();
+    cout << "The largest element is = " << *ip;
+ 
+    return 0;
+}
