@@ -1,0 +1,47 @@
+// C++ code to demonstrate the application of
+// merge() stacking notes
+ 
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main()
+{
+    // initializing 1st container
+    // containing denominations
+    vector<int> stack1 = { 50, 20, 10, 100, 2000 };
+ 
+    // initializing 2nd container
+    // containing denominations
+    vector<int> stack2 = { 500, 2000, 10, 100, 50 };
+ 
+    // declaring resultant stack
+    vector<int> stack3(10);
+ 
+    cout << "The original 1st stack : ";
+    for (int i = 0; i < 5; i++)
+        cout << stack1[i] << " ";
+ 
+    cout << endl;
+ 
+    cout << "The original 2nd stack : ";
+    for (int i = 0; i < 5; i++)
+        cout << stack2[i] << " ";
+ 
+    cout << endl;
+ 
+    // sorting initial stacks of notes
+    // in descending order
+    sort(stack1.begin(), stack1.end());
+    sort(stack2.begin(), stack2.end());
+ 
+    // using merge() to merge the initial stacks
+    // of notes
+    merge(stack1.begin(), stack1.end(), stack2.begin(), stack2.end(), stack3.begin());
+ 
+    // printing the resultant stack
+    cout << "The resultant stack of notes is : ";
+ 
+    for (int i = 0; i < stack3.size(); i++)
+        cout << stack3[i] << " ";
+    return 0;
+}
