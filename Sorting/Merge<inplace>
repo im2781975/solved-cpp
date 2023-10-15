@@ -1,3 +1,4 @@
+// inplace_merge(beg1, beg2, end) :- This function is used to sort two consecutively placed sorted ranges in a single container. It takes 3 arguments, iterator to beginning of 1st sorted range, iterator to beginning of 2nd sorted range, and iterator to last position.
 // C++ code to demonstrate the working of 
 // inplace_merge()
 #include<iostream>
