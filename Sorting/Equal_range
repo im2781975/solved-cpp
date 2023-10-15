@@ -1,0 +1,35 @@
+// C++ program to demonstrate the use of std::equal_range 
+#include <iostream> 
+#include <vector> 
+#include <algorithm> 
+using namespace std; 
+int main() 
+{ 
+    vector<int> v = { 1, 2, 3, 4, 5, 5, 6, 7 }; 
+  
+    // Declaring an iterator to store the 
+    // return value of std::equal_range 
+    std::pair<std::vector<int>::iterator, 
+              std::vector<int>::iterator> ip; 
+  
+    // Using std::equal_range and comparing the elements 
+    // with 5 
+    ip = std::equal_range(v.begin(), v.end(), 5); 
+  
+    // Displaying the subrange bounds 
+    cout << "std::lower_bound should be equal to "
+         << (ip.first - v.begin()) << " and std::upper_bound "
+         << "should be equal to " << (ip.second - v.begin()); 
+  
+    vector<int>::iterator i1, i2; 
+  
+    // Using std::lower_bound 
+    i1 = std::lower_bound(v.begin(), v.end(), 5); 
+    cout << "\nstd::lower_bound is = " << (i1 - v.begin()); 
+  
+    // Using std::upper_bound 
+    i2 = std::upper_bound(v.begin(), v.end(), 5); 
+    cout << "\nstd::upper_bound is = " << (i2 - v.begin()); 
+  
+    return 0; 
+} 
