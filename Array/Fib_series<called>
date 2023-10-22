@@ -10,6 +10,7 @@ int fib(int n) {
     if (n == 1)
         return 1;
     if (save[n] != 0)
+    //If save[n] is not 0, it means that the Fibonacci number for n has already been calculated and stored in the save array, so it returns the value stored in save[n].
         return save[n];
 
     int x = fib(n - 1);
@@ -27,3 +28,4 @@ int main() {
     cout << called << "\n";
     cout << save;
 }
+
