@@ -1,10 +1,9 @@
-// with binary predicate 
+// return idx of equal one
 #include <iostream> 
 #include <vector> 
 #include <algorithm> 
 using namespace std; 
   
-//Defining the BinaryPredicate func
 bool pred(int i, int j) 
 { 
     if (i == j) { 
