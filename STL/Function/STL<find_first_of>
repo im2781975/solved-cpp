@@ -1,4 +1,4 @@
-//the use of std::find_first_of 
+//check find first element in vector v which is divisible by any element of v1
 #include<iostream> 
 #include<vector> 
 #include<algorithm> 
