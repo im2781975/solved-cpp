@@ -1,4 +1,4 @@
-// with binary predicate 
+//return if idx of(if element of v1 is greater than a element of v2)
 #include <iostream> 
 #include <vector> 
 #include <algorithm> 
