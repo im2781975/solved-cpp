@@ -1,0 +1,26 @@
+// std::is_sorted
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+    int A[] = { 10, 11, 15, 12 };
+ 
+    int range1 = 3;
+    int range2 = 4;
+ 
+    // Condition if container is sorted or not in range1
+    if (is_sorted(A, A + range1)) {
+        cout << "\nSorted in the range : " << range1 ;
+    } else {
+        cout << "\nNot Sorted in the range : " <<range1;
+    }
+ 
+    if (is_sorted(A, A + range2)) {
+        cout << "\nSorted in the range : " << range2;
+    } else {
+        cout << "\nNot Sorted in the range : " <<range2;
+    }
+    return 0;
+}
