@@ -1,0 +1,33 @@
+/* 5
+2 3 4 5 3
+0 No
+1 Yes
+2 No
+3 No
+4 Yes */
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    vector<int>arr(n);
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+    for(int i=0;i<n;i++)
+    {
+        string ans="No";
+        //for(int j=i+1;j<n;j++)
+        for(int j=0;j<n;j++)
+        {
+            if(i==j)
+            continue;
+            //break;
+            if(arr[i]==arr[j])
+            ans="Yes";
+        }
+        cout<<i<<" "<<ans<<"\n";
+    }
+}
