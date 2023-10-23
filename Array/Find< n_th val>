@@ -1,17 +1,30 @@
-// find first n largest numbers 
+// C++ program to find first n smallest numbers 
 #include <iostream> 
 #include <algorithm> 
 using namespace std; 
 int main() 
 { 
-    int v[] = { 30, 20, 50, 60, 70, 10, 80, 40 }, i; 
+    int v[] = { 30, 20, 10, 40, 60, 50, 70, 80 }, i; 
   
-    // Using std::nth_element with n as 2 
-    std::nth_element(v, v + 1, v + 8, std::greater<int>()); 
-  
-    for (i = 0; i < 2; ++i)  
-    { 
+    sort(v, v+8);
+    cout<<"After sort [asc] is: ";
+    for (i = 0; i < 8; ++i)  
+        cout << v[i] << " ";
+    
+    nth_element(v, v + 5, v + 8); 
+    cout<<"\nAfter swap nth element [asc] is: ";
+    for (i = 0; i < 8; i++)  
         cout << v[i] << " "; 
-    } 
+        
+    sort(v, v+8,greater<int>());
+    cout<<"\nAfter sort [dsc] is: ";
+    for (i = 0; i < 8; ++i)  
+        cout << v[i] << " ";
+    
+    nth_element(v, v + 5, v + 8,greater<int>()); 
+    cout<<"\nAfter swap nth element [dsc] is: ";
+    for (i = 0; i < 8; i++)
+        cout << v[i] << " "; 
+        
     return 0; 
-}
+} 
