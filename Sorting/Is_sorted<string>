@@ -1,5 +1,4 @@
 // std::is_sorted
-
 #include <iostream>
 #include <algorithm>
  
@@ -12,10 +11,8 @@ bool ignore_case(char a, char b)
 }
 bool check_if_sorted(string str)
 {
-    // Function call to is_sorted with binary predicate ignore_case
     return is_sorted(str.begin(), str.end(), ignore_case);
 }
- 
 int main()
 {
     string str = "toY";
@@ -26,6 +23,5 @@ int main()
     else {
         cout << "Not sorted";
     }
- 
     return 0;
 }
