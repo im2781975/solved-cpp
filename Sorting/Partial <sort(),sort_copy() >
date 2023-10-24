@@ -8,12 +8,22 @@ int main()
     vector<int> v = { 1, 1, 3, 10, 3, 3, 7, 7, 8 }, v1(3); 
   
     vector<int>::iterator ip,it;
+    
     partial_sort(v.begin(), v.begin() + 3, v.end());
-    cout<<"\nAfter partial sort element is: ";
+    cout<<"\nAfter partial sort asc-element is: ";
     for (ip = v.begin(); ip != v.end(); ++ip)
         cout << *ip << " ";
+        
+    
+    partial_sort(v.begin(), v.begin() + 3, v.end(), greater<int>());
+    cout<<"\nAfter partial sort desc-element is: ";
+    for (ip = v.begin(); ip != v.end(); ++ip)
+        cout << *ip << " ";
+        
+    ip=v.begin();
+    cout<<"\nLargest element is: "<<*ip;
 
-    std::partial_sort_copy(v.begin(), v.end(), v1.begin(), v1.end()); 
+    partial_sort_copy(v.begin(), v.end(), v1.begin(), v1.end()); 
     cout<<"\nAfter partial sort copy element is: ";
     for (it = v1.begin(); it != v1.end(); ++it) 
         cout << *it << " "; 
