@@ -1,13 +1,10 @@
-// C program to illustrate the use of comparator function in 
 // qsort() 
-#include <stdio.h> 
-#include <stdlib.h> 
-  
+#include <bits/stdc++.h>
+using namespace std;
 // This function is used in qsort to decide the relative 
 // order of elements at addresses p and q. 
 int comparator(const void* p, const void* q) 
 { 
-    // Get the values at given addresses 
     int l = *(const int*)p; 
     int r = *(const int*)q; 
   
@@ -26,16 +23,14 @@ int comparator(const void* p, const void* q)
     // l is odd, put l first 
     return -1; 
 } 
-  
-// A utility function to print an array 
+ 
 void printArr(int arr[], int n) 
 { 
     int i; 
     for (i = 0; i < n; ++i) 
-        printf("%d ", arr[i]); 
+        cout<<arr[i]<<" ";
 } 
-  
-// Driver program to test above function 
+ 
 int main() 
 { 
     int arr[] = { 1, 6, 5, 2, 3, 9, 4, 7, 8 }; 
