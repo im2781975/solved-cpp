@@ -10,7 +10,6 @@ int main()
     int range1 = 3;
     int range2 = 4;
  
-    // Condition if container is sorted or not in range1
     if (is_sorted(A, A + range1)) {
         cout << "\nSorted in the range : " << range1 ;
     } else {
