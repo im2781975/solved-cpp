@@ -1,0 +1,31 @@
+// std::partial_sort_copy 
+#include <iostream> 
+#include <vector> 
+#include <algorithm> 
+using namespace std; 
+bool comp(int a,int b)
+{
+    return a<b;
+}
+int main() 
+{ 
+    vector<int> v = { 100, 45, 78, 23, 220 }, v1(5); 
+  
+    vector<int>::iterator ip; 
+  
+    partial_sort_copy(v.begin(), v.end(), v1.begin(), v1.end(),comp); 
+  
+    // Displaying the vectors after applying 
+    // std::partial_sort_copy 
+     cout<< "\nAfter partial sort cpy vect(v) is : "; 
+  
+    for (ip = v.begin(); ip != v.end(); ++ip) { 
+        cout << *ip << " "; 
+    } 
+    cout<< "\nAfter partial sort cpy vect(v1) is : "; 
+ 
+    for (ip = v1.begin(); ip != v1.end(); ++ip) { 
+        cout << *ip << " "; 
+    } 
+    return 0; 
+} 
