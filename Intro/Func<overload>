@@ -5,20 +5,19 @@ class Test {
     int x;
  
     public:
-    Test(int i): x(i)
-    {
-    }
+    Test(int i): x(i){}
     void fun() const
     {
         cout << "fun() const called " << "\n";
     }
-    void fun() { cout << "fun() called " << "\n"; }
+    void fun()
+    { cout << "fun() called " << "\n"; }
 };
 int main()
 {
-    Test t1(10);
     const Test t2(20);
-    t1.fun();
+    Test t1(10);
     t2.fun();
+    t1.fun();
     return 0;
 }
