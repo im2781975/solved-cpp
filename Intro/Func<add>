@@ -2,11 +2,11 @@
 using namespace std;
 void add(int a, double b)
 {
-    cout<<"sum = "<<(a+b);
+    cout<<"sum(int+double) : "<<(a+b);
 } 
 void  add(double a, int b)
 {
-    cout<<endl<<"sum = "<<(a+b);
+    cout<<"\nsum(double+int) : "<<(a+b);
 } 
 int main()
 {
