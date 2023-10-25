@@ -1,2 +1,0 @@
-merge(beg1, end1, beg2, end2, beg3) :- This function merges two sorted containers and stores in new container in sorted order (merge sort). It takes 5 arguments, first and last iterator of 1st container, first and last iterator of 2nd container and 1st iterator of resultant container. 
-includes(beg1, end1, beg2, end2) :- This function is used to check whether one sorted container elements are including other sorted container elements or not. Returns true if 1st container includes 2nd container else returns false.
