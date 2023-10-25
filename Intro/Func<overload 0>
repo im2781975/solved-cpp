@@ -2,13 +2,13 @@
 using namespace std;
  
 void print(int i) {
-  cout << " Here is int " << i << endl;
+  cout << "\nHere is int " << i ;
 }
 void print(double  f) {
-  cout << " Here is float " << f << endl;
+  cout << "\nHere is float " << f ;
 }
 void print(char const *c) {
-  cout << " Here is char* " << c << endl;
+  cout << "\nHere is char* " << c ;
 }
  
 int main() {
