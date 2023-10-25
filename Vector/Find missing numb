@@ -1,26 +1,25 @@
- /*takes n-1 integer numbers, which contains distinct integers from 1 to n. Exactly one number between 1 to n is missing. Find that number in O(n).
-->5
-1 2 5 4
-<-3
-->6
-1 6 4 3 2
-<-5 */
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-int main ()
-{
+
+int main() {
     int n;
-    cin>>n;
-    vector<int> a(n+1);
+    //5
+    cin >> n;
+    vector<int> a(n + 1);
+
     int k;
-    for(int i=1;i<n;i++)
+    for (int i = 1; i < n; i++)
     {
+        //1 2 5 4
         cin >> k;
-        a[k]=1;
+        a[k] = 1; 
+        //Each input integer is stored in the variable k, and its presence is marked in the a vector by setting a[k] to 1.
     }
-    for(int i=1;i<=n;i++)
-    {
-        if(a[i]==0)
-        cout<<i<<endl;
+    for (int i = 1; i <= n; i++) {
+        if (a[i] == 0) {
+            cout << i << " \n";
+        }
     }
+    return 0;
 }
+
