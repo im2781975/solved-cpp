@@ -1,0 +1,47 @@
+#include <iostream>
+#include <string>
+
+bool is_palindrome(string str) {
+    int n = str.size();
+    int l = 0;
+    int r = n - 1;
+    while (l < r) {
+        if (str[l] != str[r]) {
+            return false;
+        }
+        l++;
+        r--;
+    }
+    return true;
+}
+
+bool is_palindrome_recursive(string str) {
+    if (str == "" || str.size() == 1) {
+        return true;
+    } else {
+        int n = str.size();
+        string small_str = str.substr(1, n - 2);
+        return is_palindrome_recursive(small_str) && (str[0] == str[n - 1]);
+    }
+}
+
+int main() {
+    string test_str;
+    std::cout << "Enter a string: ";
+    std::cin >> test_str;
+
+    if (is_palindrome(test_str)) {
+        std::cout << "Iterative: It's a palindrome!" << std::endl;
+    } else {
+        std::cout << "Iterative: It's not a palindrome!" << std::endl;
+    }
+
+    if (is_palindrome_recursive(test_str)) {
+        std::cout << "Recursive: It's a palindrome!" << std::endl;
+    } else {
+        std::cout << "Recursive: It's not a palindrome!" << std::endl;
+    }
+
+    return 0;
+}
+
