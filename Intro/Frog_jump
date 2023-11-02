@@ -10,6 +10,11 @@ int stone(int n)
     
     if(dp[n]!=-1)return dp[n];
     int x=stone(n-1)+abs(h[n]-h[n-1]);
+    if(n==2)
+    {
+        dp[n]=x;
+        return x;
+    }
     int y=stone(n-2)+abs(h[n]-h[n-2]);
     int ans=min(x,y);
     dp[n]=ans;
