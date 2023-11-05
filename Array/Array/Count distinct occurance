@@ -1,0 +1,35 @@
+/* C/C++ program to count number of times S appears
+   as a subsequence in T */
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int f(int i, int j, string s, string t)
+{
+    if (j >= t.size()) {
+        return 1;
+    }
+ 
+    if (i >= s.size()) {
+        return 0;
+    }
+ 
+    if (s[i] == t[j]) {
+        return f(i + 1, j + 1, s, t) + f(i + 1, j, s, t);
+    }
+ 
+    return f(i + 1, j, s, t);
+}
+ 
+int findSubsequenceCount(string s, string t)
+{
+    return f(0, 0, s, t);
+}
+ 
+// Driver code to check above method
+int main()
+{
+    string T = "ge";
+    string S = "geeksforgeeks";
+    cout << findSubsequenceCount(S, T) << endl;
+    return 0;
+}
