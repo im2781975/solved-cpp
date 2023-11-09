@@ -1,0 +1,20 @@
+#include <iostream> 
+#include<bits/stdc++.h> 
+using namespace std; 
+  
+int main() { 
+    //given vector 
+    vector<int>v{12, 35, 1, 10, 34, 1}; 
+    //inserting all the element form vector v to set s. 
+    set<int>s(v.begin(),v.end()); 
+    //clear the vector. 
+    v.clear(); 
+    //insert all element back in vector in sorted order. 
+    for(auto it:s)v.push_back(it); 
+    //the size of updated vector. 
+    int n=v.size(); 
+    //printing the second largest element in vector. 
+    cout<<"The Second Largest Element in Vector is: ";  
+    cout<<v[n-2]<<endl; 
+    return 0; 
+} 
