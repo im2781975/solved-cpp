@@ -1,0 +1,43 @@
+#include <climits>
+#include <iostream>
+ 
+using namespace std;
+ 
+int max_sum_rotation(int arr[], int n)
+{
+    int max_sum = INT_MIN; // set the maximum sum to the
+                           // minimum possible value
+    for (int i = 0; i < n;
+         i++) { // loop through all possible rotations
+        int sum = 0; // set the current sum to zero
+        for (int j = 0; j < n;
+             j++) { // loop through all elements in the
+                    // array
+            int index
+                = (i + j)
+                  % n; // calculate the index of the current
+                       // element after rotation
+            sum += j * arr[index]; // add the product of the
+                                   // element with its index
+                                   // to the sum
+        }
+        max_sum = max(
+            max_sum,
+            sum); // update the maximum sum if necessary
+    }
+    return max_sum; // return the maximum sum obtained over
+                    // all rotations
+}
+ 
+int main()
+{
+    int arr[] = {
+        10, 1, 2, 3, 4, 5, 6, 7, 8, 9
+    }; // define an array
+    int n = sizeof(arr)
+            / sizeof(
+                arr[0]); // calculate the size of the array
+    cout << max_sum_rotation(arr, n)
+         << endl; // call the function and print the result
+    return 0; // indicate successful program completion
+}
