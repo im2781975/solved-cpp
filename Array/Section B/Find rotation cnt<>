@@ -1,0 +1,32 @@
+#include <bits/stdc++.h> 
+using namespace std; 
+  
+int countRotations(int arr[], int n) 
+{ 
+  
+      
+  
+        // Traverse the array 
+        for (int i = 0; i < n; i++) { 
+  
+            // Index where element is greater than the next element 
+              
+            if (arr[i] > arr[i + 1] && i+1 <n) 
+            { 
+                return i + 1; 
+            } 
+        } 
+    } 
+  
+    // Array is not rotated 
+    return 0; 
+} 
+  
+// Driver code 
+int main() 
+{ 
+    int arr[] = { 15, 18, 2, 3, 6, 12 }; 
+    int n = sizeof(arr) / sizeof(arr[0]); 
+    cout << countRotations(arr, n); 
+    return 0; 
+}
