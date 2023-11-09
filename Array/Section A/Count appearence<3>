@@ -1,0 +1,27 @@
+#include <bits/stdc++.h> 
+using namespace std; 
+int singleelement(int arr[], int n) 
+{ 
+      //hashmap to store frequency 
+      unordered_map<int,int> mm; 
+      for(int i=0;i<n;i++) 
+    { 
+          //storing frequency 
+          mm[arr[i]]++; 
+    } 
+        
+      //iterating over map 
+      for(auto x:mm) 
+    { 
+          //returning element with frequency 1 
+          if(x.second==1) return x.first; 
+    } 
+} 
+int main() 
+{ 
+    int arr[] = { 2, 3, 5, 4, 5, 3, 4 }; 
+    int size = sizeof(arr) / sizeof(arr[0]); 
+    sort(arr, arr + size); 
+    cout << singleelement(arr, size); 
+    return 0; 
+}
