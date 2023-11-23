@@ -1,15 +1,10 @@
-/ C++ program to find minimum difference of maximum 
-// and minimum of K number. 
+//find minimum difference of maximum & minimum of K number. 
 #include<bits/stdc++.h> 
 using namespace std; 
-  
-// Return minimum difference of maximum and minimum 
-// of k elements of arr[0..n-1]. 
-int minDiff(int arr[], int n, int k) 
+ 
+int minDiff(int arr[], int n,int k) 
 { 
     int result = INT_MAX; 
-  
-    // Sorting the array. 
     sort(arr, arr + n); 
   
     // Find minimum value among all K size subarray. 
@@ -18,8 +13,6 @@ int minDiff(int arr[], int n, int k)
   
     return result; 
 } 
-  
-// Driven Program 
 int main() 
 { 
     int arr[] = {10, 100, 300, 200, 1000, 20, 30}; 
