@@ -3,23 +3,17 @@ using namespace std;
  
 void maxOverlap(vector<int>& start, vector<int>& end )
 {
-     
     int n= start.size(); 
      
-    // Finding maximum starting time O(n)
     int maxa=*max_element(start.begin(), start.end()); 
- 
-    // Finding maximum ending time O(n)
     int maxb=*max_element(end.begin(), end.end());
- 
     int maxc = max(maxa, maxb); 
      
     int x[maxc + 2];
     memset(x, 0, sizeof x);
          
         int cur = 0, idx;
-         
-        // Creating and auxiliary array O(n)
+        
         for(int i = 0; i < n; i++)
         { 
             //Lazy addition
@@ -28,8 +22,6 @@ void maxOverlap(vector<int>& start, vector<int>& end )
         }
          
         int maxy = INT_MIN;
-         
-        //Lazily Calculating value at index i O(n)
         for(int i = 0; i <= maxc; i++)
         {
             cur += x[i];
@@ -37,17 +29,14 @@ void maxOverlap(vector<int>& start, vector<int>& end )
             { 
                 maxy = cur;
                 idx = i;
-                 
             }         
         }
         cout<<"Maximum value is "<<maxy<<" at position "<<idx<<endl;
 }
- 
-// Driver code
+
 int main() 
 {     
-        vector<int> start = {13, 28, 29, 14, 40, 17, 3},
-                    end = {107, 95, 111, 105, 70, 127, 74};
+    vector<int> start = {13, 28, 29, 14, 40, 17, 3}, end = {107, 95, 111, 105, 70, 127, 74};
                      
         maxOverlap(start,end);
     return 0;
