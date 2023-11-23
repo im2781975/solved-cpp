@@ -1,14 +1,8 @@
-// C++ program to find maximum difference
-// between frequency of any two element
-// such that element with greater frequency
+//find maximum diff between freq of any two element such that element with greater freq
 // is also greater in value.
 #include<bits/stdc++.h>
 using namespace std;
  
-// Return the maximum difference between
-// frequencies of any two elements such that
-// element with greater frequency is also
-// greater in value.
 int maxdiff(int arr[], int n)
 {
     unordered_map<int, int> freq;
@@ -33,16 +27,13 @@ int maxdiff(int arr[], int n)
                 ans = max(ans, freq[arr[j]]-freq[arr[i]]);
         }
     }
- 
     return ans;
 }
- 
-// Driven Program
 int main()
 {
-    int arr[] = { 3, 1, 3, 2, 3, 2 };
+    int arr[] { 3, 1, 3, 2, 3, 2 };
     int n = sizeof(arr)/sizeof(arr[0]);
  
-    cout << maxdiff(arr, n) << endl;
+    cout << maxdiff(arr, n) ;
     return 0;
 }
