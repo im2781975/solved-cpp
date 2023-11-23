@@ -1,17 +1,14 @@
-// C++ program to find the K-th smallest element
+//find the K-th smallest element
 // after removing some integers from natural number.
 #include <bits/stdc++.h>
 #define MAX 1000000
 using namespace std;
  
-// Return the K-th smallest element.
 int ksmallest(int arr[], int n, int k)
 {
-    // Making an array, and mark all number as unmarked.
     int b[MAX];
     memset(b, 0, sizeof b);
  
-    // Marking the number present in the given array.
     for (int i = 0; i < n; i++)
         b[arr[i]] = 1;
  
@@ -25,8 +22,6 @@ int ksmallest(int arr[], int n, int k)
             return j;
     }
 }
- 
-// Driven Program
 int main()
 {
     int k = 1;
