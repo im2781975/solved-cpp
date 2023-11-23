@@ -1,9 +1,7 @@
-// C++ program to generate Worst Case
-// of Merge Sort
+//generate Worst Case of Merge Sort
 #include <bits/stdc++.h>
 using namespace std;
  
-// Function to print an array
 void printArray(int A[], int size)
 {
     for(int i = 0; i < size; i++)
@@ -12,7 +10,7 @@ void printArray(int A[], int size)
     }
     cout << endl;
 }
- 
+
 // Function to join left and right subarray
 int join(int arr[], int left[], int right[],
          int l, int m, int r)
@@ -26,11 +24,9 @@ int join(int arr[], int left[], int right[],
         arr[i + j] = right[j];
     }
 }
- 
-// Function to store alternate elements in
-// left and right subarray
-int split(int arr[], int left[], int right[],
-          int l, int m, int r)
+
+// Function to store alternate elements in left and right subarray
+int split(int arr[], int left[], int right[],int l, int m, int r)
 {
     for(int i = 0; i <= m - l; i++)
         left[i] = arr[i * 2];
@@ -38,17 +34,13 @@ int split(int arr[], int left[], int right[],
     for(int i = 0; i < r - m; i++)
         right[i] = arr[i * 2 + 1];
 }
- 
-// Function to generate Worst Case 
-// of Merge Sort
-int generateWorstCase(int arr[], int l,
-                      int r)
+
+int generateWorstCase(int arr[], int l, int r)
 {
     if (l < r)
     {
         int m = l + (r - l) / 2;
  
-        // Create two auxiliary arrays
         int left[m - l + 1];
         int right[r - m];
  
@@ -64,26 +56,17 @@ int generateWorstCase(int arr[], int l,
         join(arr, left, right, l, m, r);
     }
 }
- 
-// Driver code
 int main()
 {
-     
-    // Sorted array
-    int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9,
-                  10, 11, 12, 13, 14, 15, 16 };
-                  
+    int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9,10, 11, 12, 13, 14, 15, 16 };
     int n = sizeof(arr) / sizeof(arr[0]);
  
     cout << "Sorted array is \n";
     printArray(arr, n);
  
-    // Generate Worst Case of Merge Sort
-    generateWorstCase(arr, 0, n - 1);
+    generateWorstCase(arr, 0, n -1);
  
-    cout << "\nInput array that will result "
-         << "in worst case of merge sort is \n";
-          
+    cout << "\nAfter worst merge array is: ";
     printArray(arr, n);
  
     return 0;
