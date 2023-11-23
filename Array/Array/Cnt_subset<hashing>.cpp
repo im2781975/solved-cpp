@@ -1,11 +1,11 @@
-// C++ code to implement hashing approach 
+// find number of subset containing consecutive numbers implement hashing approach 
 #include <bits/stdc++.h> 
 using namespace std; 
-  
-int countSubsets(int arr[], int n) { 
+int countSubsets(int arr[], int n)
+{ 
     unordered_set<int> s; 
     int count = 0; 
-    // iterate through the array and add each element to the set 
+    
     for(int i = 0; i < n; i++) { 
         s.insert(arr[i]); 
     } 
@@ -22,7 +22,6 @@ int countSubsets(int arr[], int n) {
     } 
     return count; 
 } 
-// driver code 
 int main() { 
     int arr[] = {100, 56, 5, 6, 102, 58, 101, 57, 7, 103}; 
     int n = sizeof(arr)/sizeof(arr[0]); 
