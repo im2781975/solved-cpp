@@ -1,13 +1,10 @@
-// C++ program for Minimum swap required
-// to convert binary tree to binary search tree
+//Minimum swap required to convert binary tree to binary search tree
 #include<bits/stdc++.h>
 using namespace std;
  
 // Inorder Traversal of Binary Tree
-void inorder(int a[], std::vector<int> &v, 
-                        int n, int index)
+void inorder(int a[],vector<int> &v,int n, int index)
 {
-    // if index is greater or equal to vector size
     if(index >= n)
         return;
     inorder(a, v, n, 2 * index + 1);
@@ -18,9 +15,9 @@ void inorder(int a[], std::vector<int> &v,
 }
  
 // Function to find minimum swaps to sort an array
-int minSwaps(std::vector<int> &v)
+int minSwaps(vector<int> &v)
 {
-    std::vector<pair<int,int> > t(v.size());
+    vector<pair<int,int> > t(v.size());
     int ans = 0;
     for(int i = 0; i < v.size(); i++)
         t[i].first = v[i], t[i].second = i;
@@ -45,13 +42,12 @@ int minSwaps(std::vector<int> &v)
     }
     return ans;
 }
- 
-// Driver code
+
 int main()
 {
     int a[] = { 5, 6, 7, 8, 9, 10, 11 };
     int n = sizeof(a) / sizeof(a[0]);
-    std::vector<int> v;
+    vector<int> v;
     inorder(a, v, n, 0);
     cout << minSwaps(v) << endl;
 }
