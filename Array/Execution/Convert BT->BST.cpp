@@ -12,8 +12,12 @@ void inorder(int a[],vector<int> &v,int n, int index)
     // push elements in vector
     v.push_back(a[index]);
     inorder(a, v, n, 2 * index + 2);
+    for(int i=0; i<v.size(); i++)
+    {
+        cout<<v[i]<<" ";
+    }
+    cout<<"\n";
 }
- 
 // Function to find minimum swaps to sort an array
 int minSwaps(vector<int> &v)
 {
@@ -30,7 +34,7 @@ int minSwaps(vector<int> &v)
             continue;
         else
         {
-            // swapping of elements
+            // swapping of elements according BST method
             swap(t[i].first, t[t[i].second].first);
             swap(t[i].second, t[t[i].second].second);
         }
@@ -40,14 +44,32 @@ int minSwaps(vector<int> &v)
             --i;
         ans++;
     }
-    return ans;
+    cout<<"Minimum swap requirment: "<<ans<<"\n";
+    for(int i=0; i<t.size(); i++)
+    {
+        cout<<t[i].first<<" "<<t[i].second<<endl;
+    }
 }
-
 int main()
 {
     int a[] = { 5, 6, 7, 8, 9, 10, 11 };
     int n = sizeof(a) / sizeof(a[0]);
     vector<int> v;
     inorder(a, v, n, 0);
-    cout << minSwaps(v) << endl;
+    minSwaps(v);
 }
+/*8 
+8 6 9 
+8 6 9 
+8 6 9 5 10 
+8 6 9 5 10 7 11 
+8 6 9 5 10 7 11 
+8 6 9 5 10 7 11 
+Minimum swap requirment: 3
+8 0
+6 1
+9 2
+5 3
+10 4
+7 5
+11 6 */
