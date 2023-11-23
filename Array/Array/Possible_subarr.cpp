@@ -1,11 +1,7 @@
-// C++ code to print all possible subarrays for given array
-// using recursion
- 
+// print all possible subarrays for given array using recursion
 #include <bits/stdc++.h>
 using namespace std;
- 
-// Recursive function to print all possible subarrays for
-// given array
+
 void printSubArrays(vector<int> arr, int start, int end)
 {
     // Stop if we have reached the end of the array
