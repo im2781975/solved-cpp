@@ -39,13 +39,11 @@ int findSubsequenceCount(string S, string T)
                 mat[i][j] = mat[i][j - 1] + mat[i - 1][j - 1];
         }
     }
-
     for (int i = 1; i <= m; i++, cout << endl)
         for (int j = 1; j <= n; j++)
             cout << mat[i][j] << " ";  
     //return mat[m][n];
 }
-
 int main()
 {
     string T = "ge";
