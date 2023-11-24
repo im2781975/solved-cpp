@@ -1,37 +1,25 @@
-// C++ implementation of smallest difference triplet
+// smallest difference triplet
 #include <bits/stdc++.h>
 using namespace std;
- 
-// function to find maximum number
+
 int maximum(int a, int b, int c)
 {
-   return max(max(a, b), c);
+    return max(max(a, b), c);
 }
- 
-// function to find minimum number
 int minimum(int a, int b, int c)
 {
    return min(min(a, b), c);
 }
- 
-// Finds and prints the smallest Difference Triplet
-void smallestDifferenceTriplet(int arr1[], int arr2[],
-                                    int arr3[], int n)
+void smallestDifferenceTriplet(int arr1[], int arr2[],int arr3[], int n)
 {
-    // sorting all the three arrays
     sort(arr1, arr1+n);
     sort(arr2, arr2+n);
     sort(arr3, arr3+n);
  
-    // To store resultant three numbers
     int res_min, res_max, res_mid;
  
-    // pointers to arr1, arr2, arr3
-    // respectively
     int i = 0, j = 0, k = 0;
  
-    // Loop until one array reaches to its end
-    // Find the smallest difference.
     int diff = INT_MAX;
     while (i < n && j < n && k < n)
     {
@@ -49,8 +37,7 @@ void smallestDifferenceTriplet(int arr1[], int arr2[],
         else
             k++;
  
-        // comparing new difference with the
-        // previous one and updating accordingly
+        // comparing new difference with the previous one & updating accordingly
         if (diff > (max-min))
         {
             diff = max - min;
@@ -59,12 +46,8 @@ void smallestDifferenceTriplet(int arr1[], int arr2[],
             res_min = min;
         }
     }
- 
-    // Print result
     cout << res_max << ", " << res_mid << ", " << res_min;
 }
- 
-// Driver program to test above
 int main()
 {
     int arr1[] = {5, 2, 8};
