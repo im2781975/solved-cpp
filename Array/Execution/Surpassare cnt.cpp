@@ -1,11 +1,8 @@
-// Naive C++ program to find surpasser count of
-// each element in array
+//find surpasser count of each element in array
 #include <bits/stdc++.h>
 using namespace std;
- 
-// Function to find surpasser count of each element
-// in array
-void findSurpasser(int arr[], int n)
+
+void findSurpasser(int arr[],int n)
 {
     for (int i = 0; i < n; i++)
     {
@@ -14,30 +11,23 @@ void findSurpasser(int arr[], int n)
         for (int j = i + 1; j < n; j++)
             if (arr[j] > arr[i])
                 count++;
- 
         cout << count << " ";
     }
 }
- 
-/* Function to print an array */
 void printArray(int arr[], int n)
 {
     for (int i = 0; i < n; i++)
-        printf("%d ", arr[i]);
-    printf("\n");
+        cout<<arr[i]<<" ";
 }
- 
-/* Driver program to test above functions */
 int main()
 {
-    int arr[] = { 2, 7, 5, 3, 0, 8, 1 };
+    int arr[]{2, 7, 5, 3, 0, 8, 1};
     int n = sizeof(arr) / sizeof(arr[0]);
  
-    printf("Given array is \n");
+    cout<<"Array is: ";
     printArray(arr, n);
  
-    printf("Surpasser Count of array is \n");
+    cout<<"\nSurpassare count array is: ";
     findSurpasser(arr, n);
- 
     return 0;
 }
