@@ -20,7 +20,6 @@ void printSubArrays(vector<int> arr, int start, int end)
     }
     return;
 }
- 
 int main()
 {
     vector<int> arr = { 1, 2, 3 };
