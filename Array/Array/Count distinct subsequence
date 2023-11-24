@@ -1,5 +1,4 @@
-/* C/C++ program to count number of times S appears
-   as a subsequence in T */
+//count number of times S appears as a subsequence in T 
 #include <bits/stdc++.h>
 using namespace std;
  
@@ -7,12 +6,10 @@ int findSubsequenceCount(string S, string T)
 {
     int m = T.length(), n = S.length();
  
-    // T can't appear as a subsequence in S
     if (m > n)
         return 0;
  
     // mat[i][j] stores the count of occurrences of
-    // T(1..i) in S(1..j).
     int mat[m + 1][n + 1];
  
     // Initializing first column with all 0s. An empty
@@ -24,8 +21,7 @@ int findSubsequenceCount(string S, string T)
     // string is subsequence of all.
     for (int j = 0; j <= n; j++)
         mat[0][j] = 1;
- 
-    // Fill mat[][] in bottom up manner
+
     for (int i = 1; i <= m; i++) {
         for (int j = 1; j <= n; j++) {
  
@@ -43,19 +39,17 @@ int findSubsequenceCount(string S, string T)
                 mat[i][j] = mat[i][j - 1] + mat[i - 1][j - 1];
         }
     }
- 
-    /* uncomment this to print matrix mat
+
     for (int i = 1; i <= m; i++, cout << endl)
         for (int j = 1; j <= n; j++)
-            cout << mat[i][j] << " ";  */
-    return mat[m][n];
+            cout << mat[i][j] << " ";  
+    //return mat[m][n];
 }
- 
-// Driver code to check above method
+
 int main()
 {
     string T = "ge";
     string S = "geeksforgeeks";
-    cout << findSubsequenceCount(S, T) << endl;
+     findSubsequenceCount(S, T);
     return 0;
 }
