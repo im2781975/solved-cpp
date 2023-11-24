@@ -7,11 +7,11 @@ int f(int i, int j, string s, string t, vector<vector<int>>& dp) {
     if (t.size() - j > s.size() -i)
         return 0;
     //If we have reached the end of string t, we have found a valid subsequence
-    if (j == t.size()) {
+    if (j >= t.size()) {
         return 1;
     }
     // If we have reached the end of string s, but not the end of t, return 0
-    if (i == s.size()) {
+    if (i >= s.size()) {
         return 0;
     }
     //If the result for the current indices is already computed, return that value
