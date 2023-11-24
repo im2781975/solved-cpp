@@ -1,5 +1,4 @@
-//find maximum diff between freq of any two element such that element with greater freq
-// is also greater in value.
+//find maximum diff between freq of any two element such that element with greater freq is also greater in value.
 #include<bits/stdc++.h>
 using namespace std;
  
@@ -16,14 +15,12 @@ int maxdiff(int arr[], int n)
     {
         for (int j=0; j<n; j++)
         {
-            // finding difference such that element
-            // having greater frequency is also
-            // greater in value.
-            if (freq[arr[i]] > freq[arr[j]] &&
-                arr[i] > arr[j] )
+            //  if the frequency of the element arr[i] is greater than the frequency of the element arr[j], and at the same time, if the value of arr[i] is greater than the value of arr[j]. If both conditions are true, it means that arr[i] has a higher frequency and a greater value compared to arr[j]. In this case, the difference in frequencies (freq[arr[i]] - freq[arr[j]]) is calculated, and if it's greater than the current ans, it updates ans.
+            if (freq[arr[i]] > freq[arr[j]] && arr[i] > arr[j] )
+                
                 ans = max(ans, freq[arr[i]]-freq[arr[j]]);
-            else if (freq[arr[i]] < freq[arr[j]] &&
-                      arr[i] < arr[j] )
+            else if (freq[arr[i]] < freq[arr[j]] && arr[i] < arr[j] )
+                      
                 ans = max(ans, freq[arr[j]]-freq[arr[i]]);
         }
     }
@@ -33,7 +30,6 @@ int main()
 {
     int arr[] { 3, 1, 3, 2, 3, 2 };
     int n = sizeof(arr)/sizeof(arr[0]);
- 
     cout << maxdiff(arr, n) ;
     return 0;
 }
