@@ -1,46 +1,36 @@
+//Converted to idx
 #include <bits/stdc++.h>
 using namespace std;
- 
-// Converts arr[0..n-1] to reduced form.
+
 void convert(int arr[], int n)
 {
-    // A vector of pairs. Every element of
-    // pair contains array element and its
-    // index
     vector<pair<int, int> > v;
  
-    // Put all elements and their index in
-    // the vector
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n; ++)
         v.push_back(make_pair(arr[i], i));
  
-    // Sort the vector by array values
     sort(v.begin(), v.end());
  
     // Put indexes of modified vector in arr[]
     for (int i = 0; i < n; i++)
         arr[v[i].second] = i;
 }
- 
-// Utility function to print an array.
 void printArr(int arr[], int n)
 {
     for (int i = 0; i < n; i++)
         cout << arr[i] << " ";
 }
- 
-// Driver program to test above method
 int main()
 {
     int arr[] = { 10, 20, 15, 12, 11, 50 };
     int n = sizeof(arr) / sizeof(arr[0]);
  
-    cout << "Given Array is \n";
+    cout << "\nArray is: ";
     printArr(arr, n);
  
     convert(arr, n);
  
-    cout << "\n\nConverted Array is \n";
+    cout<<"\nConverted Array is: ";
     printArr(arr, n);
  
     return 0;
