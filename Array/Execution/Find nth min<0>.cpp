@@ -1,27 +1,22 @@
-// C++ program to find the Kth smallest element
-// after removing some integer from first n
-// natural number.
+// find the Kth smallest element
+// after removing some integer from first n natural number.
 #include <bits/stdc++.h>
 using namespace std;
- 
-// Return the K-th smallest element.
+
 int ksmallest(int arr[], int n, int k)
 {
     sort(arr, arr + n);
  
-    // Checking if k lies before 1st element
     if (k < arr[0])
         return k;
  
-    // If k is the first element of array arr[].
     if (k == arr[0])
         return arr[0] + 1;
  
-    // If k is more than last element
     if (k > arr[n - 1])
         return k + n;
  
-    // If first element of array is 1.
+    //If 1st element of array is 1
     if (arr[0] == 1)
         k--;
  
@@ -40,11 +35,8 @@ int ksmallest(int arr[], int n, int k)
         else
             k -= c;
     }
- 
     return arr[n - 1] + k;
 }
- 
-// Driven Program
 int main()
 {
     int k = 1;
