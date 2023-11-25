@@ -1,14 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
- 
-// function performing calculation
 int minLength(vector<int>& arr)
 {
-    // temporary array equal to given array
     vector<int> temp = arr;
-    // sorting the temporary array
     sort(temp.begin(), temp.end());
-    // initializing indices
+    
     int s = 0, e = 0;
     // checking the unequal element from start and storing
     // it in s variable
@@ -26,18 +22,12 @@ int minLength(vector<int>& arr)
             break;
         }
     }
-    // returning minimum length
     return (e - s + 1);
 }
- 
-// driver function
 int main()
 {
-    // given array arr
-    vector<int> arr
-        = { 10, 12, 20, 30, 25, 40, 32, 31, 35, 50, 60 };
-    // calling the function performing calculation and
-    // printing the result
+    vector<int> arr{ 10, 12, 20, 30, 25, 40, 32, 31, 35, 50, 60 };
+    
     cout << "Minimum length of subarray is : "
          << minLength(arr);
     return 0;
