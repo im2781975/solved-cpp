@@ -1,31 +1,21 @@
-// C++ program to check if we can sort
-// an array with adjacent swaps allowed
+// sort an array with adjacent swaps allowed
 #include<bits/stdc++.h>
 using namespace std;
- 
-// Returns true if it is possible to sort
-// else false/
 bool checkForSorting(int arr[], int n)
 {
     for (int i=0; i<n-1; i++)
     {
-        // We need to do something only if
-        // previousl element is greater
         if (arr[i] > arr[i+1])
         {
             if (arr[i] - arr[i+1] == 1)
                 swap(arr[i], arr[i+1]);
  
-            // If difference is more than
-            // one, then not possible
             else
                 return false;
         }
     }
     return true;
 }
- 
-// Driver code
 int main()
 {
     int arr[] = {1,0,3,2};
