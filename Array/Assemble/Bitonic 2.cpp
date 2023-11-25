@@ -1,26 +1,20 @@
-// Program to separately sort even-placed and odd 
-// placed numbers and place them together in sorted 
-// array. 
+//sort even-placed and odd placed numbers and place them together in sorted array. 
 #include <bits/stdc++.h> 
 using namespace std; 
   
 void bitonicGenerator(int arr[], int n) 
 { 
-    // create evenArr[] and oddArr[] 
     vector<int> evenArr; 
     vector<int> oddArr; 
   
-    // Put elements in oddArr[] and evenArr[] as 
-    // per their position 
-    for (int i = 0; i < n; i++) { 
+    // Put elements in oddArr[] and evenArr[] as per their position 
+    for (int i = 0; i < n; i++)
+    { 
         if (!(i % 2)) 
             evenArr.push_back(arr[i]); 
         else
             oddArr.push_back(arr[i]); 
     } 
-  
-    // sort evenArr[] in ascending order 
-    // sort oddArr[] in descending order 
     sort(evenArr.begin(), evenArr.end()); 
     sort(oddArr.begin(), oddArr.end(), greater<int>()); 
   
@@ -30,8 +24,6 @@ void bitonicGenerator(int arr[], int n)
     for (int j = 0; j < oddArr.size(); j++) 
         arr[i++] = oddArr[j]; 
 } 
-  
-// Driver Program 
 int main() 
 { 
     int arr[] = { 1, 5, 8, 9, 6, 7, 3, 4, 2, 0 }; 
