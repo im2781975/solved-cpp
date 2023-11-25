@@ -1,17 +1,12 @@
-// C program to sort an array after applying equation
-// A*x*x + B*x + C
+// sort an array after applying equation A*x*x + B*x + C
 #include<bits/stdc++.h>
 using namespace std;
- 
-// Function to sort an array after applying given
-// equation.
+
 void sortArray(int arr[], int n, int A, int B, int C)
 {
-   // Apply equation on all elements
     for (int i = 0; i < n; i++)
         arr[i] = A*arr[i]*arr[i] + B*arr[i] + C;
  
-    // Find maximum element in resultant array
     int index, maximum = INT_MIN;
     for (int i = 0; i< n; i++)
     {
@@ -43,12 +38,9 @@ void sortArray(int arr[], int n, int A, int B, int C)
  
     new_arr[n-1] = maximum;
  
-    // Modify original array
     for (int i = 0; i < n ; i++)
         arr[i] = new_arr[i];
 }
- 
-// Driver code
 int main()
 {
     int arr[] = {-21 ,-15, 12, 13, 14 };
