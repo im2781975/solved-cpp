@@ -1,39 +1,30 @@
-// A C++ program to sort an array according to the order
-// defined by another array
+// sort an array according to the order defined by another array
 #include <bits/stdc++.h>
 using namespace std;
  
-// function to sort A1 according to A2 using hash map in C++
+// sort A1 according to A2 using hash map 
 void sortA1ByA2(int A1[], int N, int A2[], int M, int ans[])
 {
     map<int, int> mp;
- 
-    // indexing for answer = ans array
     int ind = 0;
- 
     // initially storing frequency of each element of A1 in
     // map [ key, value ] = [ A1[i] , frequency[ A1[i] ] ]
     for (int i = 0; i < N; i++) {
         mp[A1[i]] += 1;
     }
  
-    // traversing each element of A2, first come first serve
     for (int i = 0; i < M; i++) {
  
-        // checking if current element of A2 is present in
-        // A1 or not if not present go to next iteration
-        // else store number of times it is appearing in A1
-        // in ans array
+        // checking if current element of A2 is present in A1 or not if not present go to next iteration
+        // else store number of times it is appearing in A1 in ans array
         if (mp[A2[i]] != 0) {
  
-            // mp[ A2[i] ] = frequency of A2[i] element in
-            // A1 array
+            // mp[ A2[i] ] = frequency of A2[i] element in A1 array
             for (int j = 1; j <= mp[A2[i]]; j++)
                 ans[ind++] = A2[i];
         }
  
-        // to avoid duplicate storing of same element of A2
-        // in ans array
+        // to avoid duplicate storing of same element of A2 in ans array
         mp.erase(A2[i]);
     }
  
@@ -46,17 +37,12 @@ void sortA1ByA2(int A1[], int N, int A2[], int M, int ans[])
             ans[ind++] = it.first;
     }
 }
- 
-// Utility function to print an array
 void printArray(int arr[], int n)
 {
-    // Iterate in the array
     for (int i = 0; i < n; i++)
         cout << arr[i] << " ";
     cout << endl;
 }
- 
-// Driver Code
 int main()
 {
     int A1[] = { 2, 1, 2, 5, 7, 1, 9, 3, 6, 8, 8 };
@@ -64,11 +50,9 @@ int main()
     int n = sizeof(A1) / sizeof(A1[0]);
     int m = sizeof(A2) / sizeof(A2[0]);
  
-    // The ans array is used to store the final sorted array
     int ans[n];
     sortA1ByA2(A1, n, A2, m, ans);
  
-    // Prints the sorted array
     cout << "Sorted array is \n";
     printArray(ans, n);
  
