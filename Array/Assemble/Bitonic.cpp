@@ -1,36 +1,26 @@
-// C++ Program to sort even-placed elements in increasing and 
-// odd-placed in decreasing order with constant space complexity 
+// sort even-placed elements in increasing & odd-placed in decreasing order with constant space complexity 
 #include <bits/stdc++.h> 
 using namespace std; 
-  
 void bitonicGenerator(int arr[], int n) 
 { 
-    // Making all even placed index  
-    // element negative 
     for (int i = 0; i < n; i++) { 
         if (i % 2==0) 
             arr[i]=-1*arr[i]; 
     } 
-      
-    // Sorting the whole array 
     sort(arr,arr+n); 
-      
-    // Finding the middle value of  
-    // the array 
     int mid=(n-1)/2; 
       
     // Reverting the changed sign 
     for (int i = 0; i <= mid; i++) { 
             arr[i]=-1*arr[i]; 
-    } 
+        } 
       
     // Reverse first half of array 
     reverse(arr,arr+mid+1); 
-    // Reverse second half of array 
+    
+    // Reverse second half of array
     reverse(arr+mid+1,arr+n); 
 } 
-  
-// Driver Program 
 int main() 
 { 
     int arr[] = { 1, 5, 8, 9, 6, 7, 3, 4, 2, 0 }; 
