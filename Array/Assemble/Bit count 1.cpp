@@ -1,9 +1,7 @@
-// C++ program to sort an array according to count of set
-// bits using std::sort()
+//sort an array according to count of set bits 
 #include <bits/stdc++.h>
 using namespace std;
- 
-// a utility function that returns total set bits count in an integer
+
 int countBits(int a)
 {
     int count = 0;
@@ -14,8 +12,6 @@ int countBits(int a)
     }
     return count;
 }
- 
-// custom comparator of std::sort
 int cmp(int a, int b)
 {
     int count1 = countBits(a);
@@ -26,21 +22,16 @@ int cmp(int a, int b)
         return false;
     return true;
 }
- 
-// Function to sort according to bit count using std::sort
+
 void sortBySetBitCount(int arr[], int n)
 {
     stable_sort(arr, arr + n, cmp);
 }
- 
-// Utility function to print an array
 void printArr(int arr[], int n)
 {
     for (int i = 0; i < n; i++)
         cout << arr[i] << " ";
 }
- 
-// Driver Code
 int main()
 {
     int arr[] = { 1, 2, 3, 4, 5, 6 };
