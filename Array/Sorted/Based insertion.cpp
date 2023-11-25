@@ -1,6 +1,4 @@
-
-/* C++ Function to sort an array using insertion sort*/
- 
+//sort an array using insertion sort
 #include <bits/stdc++.h>
 using namespace std;
  
@@ -11,11 +9,8 @@ void insertionSort(int A[], int size)
         key = A[i];
         j = i - 1;
  
-        /* Move elements of A[0..i-1], that are
-           greater than key, to one
-           position ahead of their current position.
-           This loop will run at most k times */
-        while (j >= 0 && A[j] > key) {
+        //Move elements of A[], that are greater than key, to one position ahead of their current position.This loop will run at most k times 
+        while(j >= 0 && A[j] > key) {
             A[j + 1] = A[j];
             j = j - 1;
         }
@@ -27,12 +22,10 @@ void insertionSort(int A[], int size)
    
   cout<<endl;
 }
- 
 int main()
 {
       int A[] = {6, 5, 3, 2, 8, 10, 9};
       int size = 7;
       insertionSort(A, size);    
-   
     return 0;
 }
