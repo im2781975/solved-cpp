@@ -1,11 +1,7 @@
-// C++ program to implement 
-// simple approach to sort 
-// an array according to 
-// count of set bits. 
+//sort an array according to count of set bits. 
 #include<bits/stdc++.h>
 using namespace std;
  
-// Function to count setbits
 int setBitCount(int num){
     int count = 0;
     while ( num ) 
@@ -16,26 +12,19 @@ int setBitCount(int num){
     }
     return count;
 }
- 
-// Function to sort By SetBitCount
 void sortBySetBitCount(int arr[], int n)
 {    
     multimap< int, int > count;
    
-    // Iterate over all values and 
-    // insert into multimap
     for( int i = 0 ; i < n ; ++i ) 
     {
         count.insert({(-1) * 
             setBitCount(arr[i]), arr[i]});
     }
-   
     for(auto i : count)
     cout << i.second << " " ;
     cout << "\n" ;
 }
- 
-// Driver Code
 int main() 
 {
     int arr[] = {1, 2, 3, 4, 5, 6};
