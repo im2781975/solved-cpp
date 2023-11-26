@@ -1,5 +1,3 @@
-// C++ implementation
- 
 #include <bits/stdc++.h>
 using namespace std;
 #define MAX 100
@@ -22,14 +20,13 @@ void sortStrings(char arr[][MAX], int n)
  
 int main()
 {
-    char arr[][MAX] = { "GeeksforGeeks", "Quiz", "Practice",
-                        "Gblogs", "Coding" };
+    char arr[][MAX]{"GeeksforGeeks", "Quiz", "Practice","Gblogs", "Coding" };
     int n = sizeof(arr) / sizeof(arr[0]);
  
     sortStrings(arr, n);
  
-    printf("Strings in sorted order are : ");
+    cout<<"String in sorted order: \n";
     for (int i = 0; i < n; i++)
-        printf("\n String %d is %s", i + 1, arr[i]);
+        cout<<" String "<<i+1<<" is : "<<arr[i]<<"\n";
     return 0;
 }
