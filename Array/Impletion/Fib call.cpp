@@ -28,4 +28,3 @@ int main() {
     cout << called << "\n";
     cout << save;
 }
-
