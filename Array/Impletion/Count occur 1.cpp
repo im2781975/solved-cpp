@@ -1,15 +1,11 @@
-// C++ program to find  
-// element that appears once 
+// find element that appears once 
 #include <bits/stdc++.h> 
-  
 using namespace std; 
-  
-// function which find number 
+
 int singleNumber(int nums[],int n) 
 { 
     map<int,int> m; 
     long sum1 = 0,sum2 = 0; 
-  
     for(int i = 0; i < n; i++) 
     { 
         if(m[nums[i]] == 0) 
@@ -19,15 +15,11 @@ int singleNumber(int nums[],int n)
         } 
         sum2 += nums[i]; 
     } 
-      
-    // applying the formula. 
     return 2 * (sum1) - sum2; 
 } 
-  
-// Driver code 
 int main() 
 { 
-    int a[] = {2, 3, 5, 4, 5, 3, 4}; 
+    int a[]{2, 3, 5, 4, 5, 3, 4}; 
     int n = 7; 
     cout << singleNumber(a,n) << "\n"; 
   
