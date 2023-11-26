@@ -1,8 +1,7 @@
-// C++ program to implement the above approach
 #include <bits/stdc++.h>
 using namespace std;
  
-/*Function to get gcd of a and b*/
+//Function to get gcd of a and b
 int gcd(int a, int b)
 {
     if (b == 0)
@@ -11,15 +10,14 @@ int gcd(int a, int b)
     else
         return gcd(b, a % b);
 }
- 
-/*Function to left rotate arr[] of size n by d*/
+//Function to left rotate arr[] of size n by d
 void leftRotate(int arr[], int d, int n)
 {
-    /* To handle if d >= n */
+    // To handle if d >= n 
     d = d % n;
     int g_c_d = gcd(d, n);
     for (int i = 0; i < g_c_d; i++) {
-        /* move i-th values of blocks */
+        // move i-th values of blocks 
         int temp = arr[i];
         int j = i;
  
@@ -37,21 +35,16 @@ void leftRotate(int arr[], int d, int n)
         arr[j] = temp;
     }
 }
- 
-// Function to print an array
 void printArray(int arr[], int size)
 {
     for (int i = 0; i < size; i++)
         cout << arr[i] << " ";
 }
- 
-// Driver's code
 int main()
 {
     int arr[] = { 1, 2, 3, 4, 5, 6 };
     int n = sizeof(arr) / sizeof(arr[0]);
     int d = 2;
-    // Function calling
     leftRotate(arr, d, n);
     printArray(arr, n);
  
