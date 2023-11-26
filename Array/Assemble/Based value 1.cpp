@@ -1,10 +1,9 @@
+// Function to sort array containing 0, 1 and 2
 #include <iostream>
 using namespace std;
  
-// Function to sort array containing 0, 1 and 2
 void sort012(int arr[], int n)
 {
-    // Initialisation
     int l=0;
     int r=n-1;
      
@@ -26,23 +25,16 @@ void sort012(int arr[], int n)
         }
     }
 }
- 
-// Function to print array arr[]
 void printArray(int arr[], int arr_size)
 {
-    // Iterate and print every element
     for (int i = 0; i < arr_size; i++)
         cout << arr[i] << " ";
 }
-   
-// Driver Code
 int main()
 {
     int arr[] = { 0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1 };
     int n = sizeof(arr) / sizeof(arr[0]);
-   
     sort012(arr, n);
-   
     printArray(arr, n);
    
     return 0;
