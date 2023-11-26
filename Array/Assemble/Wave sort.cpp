@@ -1,5 +1,5 @@
 //sort an input array in wave form
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 void swap(int *x, int *y)
 {
@@ -21,11 +21,20 @@ void sortInWave(int arr[], int n)
             swap(&arr[i], &arr[i + 1]);
     }
 }
+void sortinWave(int arr[], int n)
+{
+    sort(arr, arr+n);
+ 
+    // Swap adjacent elements
+    for (int i=0; i<n-1; i += 2)
+        swap(&arr[i], &arr[i+1]);
+}
 int main()
 {
     int arr[] = {10, 90, 49, 2, 1, 5, 23};
     int n = sizeof(arr)/sizeof(arr[0]);
     sortInWave(arr, n);
+    //sortinWave(arr, n);
     for (int i=0; i<n; i++)
        cout << arr[i] << " ";
     return 0;
