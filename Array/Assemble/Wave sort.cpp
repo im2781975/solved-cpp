@@ -1,20 +1,15 @@
-// A O(n) program to sort an input array in wave form
+//sort an input array in wave form
 #include<iostream>
 using namespace std;
- 
-// A utility method to swap two numbers.
 void swap(int *x, int *y)
 {
     int temp = *x;
     *x = *y;
     *y = temp;
 }
- 
-// This function sorts arr[0..n-1] in wave form, i.e., arr[0] >= 
-// arr[1] <= arr[2] >= arr[3] <= arr[4] >= arr[5] ....
+// sorts arr[0..n-1] in wave form arr[0] >= arr[1] <= arr[2] >= arr[3] <= arr[4] >= arr[5] ....
 void sortInWave(int arr[], int n)
 {
-    // Traverse all even elements
     for (int i = 0; i < n; i+=2)
     {
         // If current even element is smaller than previous
@@ -26,8 +21,6 @@ void sortInWave(int arr[], int n)
             swap(&arr[i], &arr[i + 1]);
     }
 }
- 
-// Driver program to test above function
 int main()
 {
     int arr[] = {10, 90, 49, 2, 1, 5, 23};
