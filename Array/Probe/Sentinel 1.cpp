@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
- 
-int sentinelLinearSearch(std::vector<int> array, int key) {
+using namespace std;
+int sentinelLinearSearch(vector<int> array, int key) {
     int last = array[array.size() - 1];
     array[array.size() - 1] = key;
     int i = 0;
@@ -15,15 +15,14 @@ int sentinelLinearSearch(std::vector<int> array, int key) {
         return -1;
     }
 }
- 
 int main() {
-    std::vector<int> array = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    vector<int> array = {1, 2, 3, 4, 5, 6, 7, 8, 9};
     int key = 5;
-    int index = sentinelLinearSearch(array, key);
+    int index =sentinelLinearSearch(array, key);
     if (index == -1) {
-        std::cout << key << " is not found in the array." << std::endl;
+        cout << key << " is not found in the array ";
     } else {
-        std::cout << key << " is found at index " << index << " in the array." << std::endl;
+        cout << key << " is found at index " << index << " in the array ";
     }
     return 0;
 }
