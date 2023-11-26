@@ -1,5 +1,4 @@
-// C++ program to Count Inversions
-// in an array
+//Count Inversions in an array
 #include <bits/stdc++.h>
 using namespace std;
  
@@ -13,13 +12,10 @@ int getInvCount(int arr[], int n)
  
     return inv_count;
 }
- 
-// Driver Code
 int main()
 {
     int arr[] = { 1, 20, 6, 4, 5 };
     int n = sizeof(arr) / sizeof(arr[0]);
-    cout << " Number of inversions are "
-         << getInvCount(arr, n);
+    cout << " Number of inversions are "<<getInvCount(arr, n);
     return 0;
 }
