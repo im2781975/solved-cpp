@@ -1,7 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
  
- 
 int exponential_search(vector<int> arr,int x){
     int n = arr.size();
      
@@ -27,12 +26,9 @@ int exponential_search(vector<int> arr,int x){
  
     return -1;
 }
-     
- 
-// Driver Code
 int main(){
      
-    vector<int> arr = {2, 3, 4, 10, 40};
+    vector<int> arr{2, 3, 4, 10, 40};
     int n = arr.size();
     int x = 10;
     int result = exponential_search(arr, x);
