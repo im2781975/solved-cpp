@@ -2,7 +2,6 @@
 #include <vector>
 #include <algorithm>
 #include <queue>
- 
 using namespace std;
  
 int getNumOfInversions(vector<int>& A) {
@@ -10,11 +9,8 @@ int getNumOfInversions(vector<int>& A) {
     if (N <= 1) {
         return 0;
     }
- 
     priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> sortList;
     int result = 0;
- 
-    // Heapsort, O(N*log(N))
     for (int i = 0; i < N; i++) {
         sortList.push(make_pair(A[i], i));
     }
@@ -23,13 +19,11 @@ int getNumOfInversions(vector<int>& A) {
     vector<int> x;
     while (!sortList.empty()) {
  
-        // O(log(N))
         int v = sortList.top().first;
         int i = sortList.top().second;
         sortList.pop();
  
-        // Find the current minimum's index
-        // the index y can represent how many minimums on the left
+        // Find the current minimum's index the index y can represent how many minimums on the left
         int y = upper_bound(x.begin(), x.end(), i) - x.begin();
  
         // i can represent how many elements on the left
@@ -38,17 +32,12 @@ int getNumOfInversions(vector<int>& A) {
  
         x.insert(upper_bound(x.begin(), x.end(), i), i);
     }
- 
     return result;
 }
- 
-// driver code
 int main() {
-    vector<int> A = {1, 20, 6, 4, 5};
-   
-      // function call
+    vector<int> A{1, 20, 6, 4, 5};
+
     int result = getNumOfInversions(A);
-    cout << "Number of inversions are " << result << endl;
- 
+    cout << "\nNumber of inversions are " << result ;
     return 0;
 }
