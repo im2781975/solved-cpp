@@ -1,39 +1,35 @@
 #include <iostream>
 #include <unordered_set>
 #include <vector>
-
+using namespace std;
 int main() {
     int n, m;
-    std::cin >> n;
-    std::vector<int> arr1(n);
+    cin >> n;
+    vector<int> arr1(n);
     
     for (int i = 0; i < n; i++) {
-        std::cin >> arr1[i];
+        cin >> arr1[i];
     }
 
-    std::cin >> m;
-    std::vector<int> arr2(m);
+    cin >> m;
+    vector<int> arr2(m);
 
     for (int i = 0; i < m; i++) {
-        std::cin >> arr2[i];
+        cin >> arr2[i];
     }
-
-    std::unordered_set<int> set1(arr1.begin(), arr1.end());
-    std::vector<int> result;
+    unordered_set<int> set1(arr1.begin(), arr1.end());
+    vector<int> result;
 
     for (int i = 0; i < m; i++) {
         if (set1.find(arr2[i]) != set1.end()) {
             result.push_back(arr2[i]);
         }
     }
-
     for (int i = 0; i < result.size(); i++) {
-        std::cout << result[i];
+        cout << result[i];
         if (i < result.size() - 1) {
-            std::cout << " ";
+            cout << " ";
         }
     }
-    
     return 0;
 }
-
