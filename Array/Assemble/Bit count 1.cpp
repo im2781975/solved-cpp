@@ -10,6 +10,8 @@ int countBits(int a)
         // If true, increments the count variable
             count += 1;
         a = a >> 1;
+        //for (>>)right shift value will be decreased
+        //for (<<)Left shift value will be increased
     }
     return count;
 }
@@ -23,7 +25,6 @@ int cmp(int a, int b)
         return false;
     return true;
 }
-
 void sortBySetBitCount(int arr[], int n)
 {
     stable_sort(arr, arr + n, cmp);
