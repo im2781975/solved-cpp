@@ -7,6 +7,7 @@ int countBits(int a)
     int count = 0;
     while (a) {
         if (a & 1)
+        // If true, increments the count variable
             count += 1;
         a = a >> 1;
     }
