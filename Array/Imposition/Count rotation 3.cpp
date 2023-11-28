@@ -1,7 +1,5 @@
 #include <iostream> 
 using namespace std; 
-  
-// find the pivot 
 int findPivot(int arr[], int n) 
 { 
     int low = 0, high = n - 1; 
@@ -18,17 +16,12 @@ int findPivot(int arr[], int n)
     } 
     return -1; 
 } 
-  
-// Returns count of rotations 
-// for an array which is first sorted 
-// in ascending order, then rotated 
+// Returns count of rotations for an array which is first sorted in ascending order, then rotated 
 int countRotations(int arr[], int n){ 
     int pivot = findPivot(arr, n); 
     return pivot + 1; 
 } 
-  
-// Driver Code 
-int main() 
+int main()
 { 
     int arr[] = {15, 18, 2, 3, 6, 12}; 
     int n = sizeof(arr)/sizeof(arr[0]); 
