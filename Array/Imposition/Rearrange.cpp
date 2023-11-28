@@ -1,13 +1,18 @@
-// C++ program to rearrange the elements in array such that
-// even positioned are greater than odd positioned elements
+//rearrange the elements in array such that even positioned are greater than odd positioned elements
 #include <bits/stdc++.h>
 using namespace std;
- 
+void rearrange(int arr[], int n)
+{
+    for (int i = 0; i < n-1; i+=2) {
+            if (arr[i] < arr[i +1])
+                swap(arr[i+1],arr[i]);
+    }
+    for (int i = 0; i < n; i++)
+        cout << arr[i] << " ";
+}
 void assign(int a[], int n)
 {
-    // Sort the array
     sort(a, a + n);
- 
     int ans[n];
     int p = 0, q = n - 1;
     for (int i = 0; i < n; i++) {
@@ -18,17 +23,16 @@ void assign(int a[], int n)
         else
             ans[i] = a[p++];
     }
- 
-    // Print result
     for (int i = 0; i < n; i++)
         cout << ans[i] << " ";
 }
- 
-// Driver Code
 int main()
 {
     int A[] = { 1, 3, 2, 2, 5 };
     int n = sizeof(A) / sizeof(A[0]);
+    cout<<"After assign: ";
     assign(A, n);
+    cout<<"\nAfter rearrange: ";
+    rearrange(A, n);
     return 0;
 }
