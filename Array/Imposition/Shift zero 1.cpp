@@ -1,5 +1,4 @@
-/ C++ Program to move all zeros to the end 
-  
+//Shift zero
 #include <bits/stdc++.h> 
 using namespace std; 
 int main() 
@@ -23,14 +22,12 @@ int main()
         count--; 
         j++; 
     } 
-  
     for (int i = 0; i < n; i++) { 
         A[i] = B[i]; 
     } 
   
     for (int i = 0; i < n; i++) { 
-        cout << A[i] << " "; // Print the array 
-    } 
-  
+        cout << A[i] << " "; 
+    }
     return 0; 
 }
