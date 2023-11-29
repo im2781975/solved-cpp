@@ -1,7 +1,6 @@
 
 #include <bits/stdc++.h>
 using namespace std;
- 
 void kth_elem(vector<int> arr, vector<int> q){
     if (q[1] > arr.size()){
         cout<<"List index is out of range"<<endl;
