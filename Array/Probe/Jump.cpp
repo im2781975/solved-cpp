@@ -9,6 +9,11 @@ int jumpSearch(int arr[], int x, int n)
     int prev = 0;
     while (arr[min(step, n)-1] < x)
     {
+        // arr[min(step, n)-1] is equivalent to arr[min(4, 16)-1] which is arr[3] (since indexing starts from 0).
+        //arr[3] is 2, and x is 55, so the condition arr[min(step, n)-1] < x is true.
+        //Set prev = step (prev becomes 4).
+        //Increment step by sqrt(n), so step becomes 8.
+        //Check if prev is greater than or equal to n (16). Since it's not, continue to the next iteration.
         prev = step;
         step += sqrt(n);
         if (prev >= n)
@@ -38,3 +43,4 @@ int main()
     cout << "\nNumber " << x << " is at index " << index;
     return 0;
 }
+
