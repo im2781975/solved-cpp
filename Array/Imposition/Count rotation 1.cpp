@@ -36,14 +36,18 @@ int countRotations(int arr[], int n)
         // then simply use modulo so it  never goes out of bound. 
         int mid = low + (high - low) / 2; 
         int prev = (mid - 1 + n) % n; 
+        // Finds the index of the element before the middle element, considering the array is circular.
         int next = (mid + 1) % n; 
-  
+        //Finds the index of the element after the middle element, also considering the circular nature of the array.
         if (arr[mid] <= arr[prev] && arr[mid] <= arr[next]) 
             return mid; 
+            // The if condition checks whether the element at the middle index is less than or equal to its neighbors (prev and next). If true, it means the array is rotated and the middle element is the minimum. In this case, the function returns the middle index.
         else if (arr[mid] <= arr[high]) 
             high = mid - 1; 
+            //it checks whether the element at the middle index is less than or equal to the element at the high index. If true, it means the minimum element lies in the left half, so it updates the high index accordingly.
         else if (arr[mid] >= arr[0]) 
             low = mid + 1; 
+            // it means the minimum element lies in the right half, so it updates the low index accordingly.
     } 
     return 0; 
 } 
