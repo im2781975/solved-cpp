@@ -4,11 +4,13 @@ using namespace std;
 int sentinelLinearSearch(vector<int> array, int key) {
     int last = array[array.size() - 1];
     array[array.size() - 1] = key;
+    //It saves the last element of the vector in the variable last.Then, it replaces the last element with the search key (key). This is the sentinel value used to terminate the search loop.
     int i = 0;
     while (array[i] != key) {
         i++;
     }
     array[array.size() - 1] = last;
+    //After the loop, it restores the original last element of the vector.
     if (i < array.size() - 1 || last == key) {
         return i;
     } else {
