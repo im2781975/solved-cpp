@@ -1,4 +1,4 @@
-//find number of rotations  in a sorted and rotated array. 
+//find number of rotations  in a sorted and rotated array for being sorted
 #include <bits/stdc++.h> 
 using namespace std; 
   
