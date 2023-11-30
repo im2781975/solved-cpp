@@ -33,6 +33,11 @@ int NthLargestSum(int arr[], int N, int K)
         for (int j = i; j <= N; j++) {
             // calculates the contiguous subarray sum from j to i index
             int x = sum[j] - sum[i - 1];
+// First iteration (i = 1): j = 1, 2, 3, 4, 5
+// Second iteration (i = 2): j = 2, 3, 4, 5
+// Third iteration (i = 3): j = 3, 4, 5
+// Fourth iteration (i = 4): j = 4, 5
+// Fifth iteration (i = 5): j = 5
 // Example calculations:
 // For i=1, j=3: x = sum[3] - sum[0] = 4 - 0 = 4
 // For i=2, j=4: x = sum[4] - sum[1] = 9 - 3 = 6
@@ -50,6 +55,32 @@ int NthLargestSum(int arr[], int N, int K)
                 }
             }
         }
+/*Iteration 1 (i=1, j=1):
+
+ x = sum[1] - sum[0] = 3.
+Q.size() < K is true (heap size is 0), so Q.push(x).
+After this, Q = {3}.
+Iteration 2 (i=1, j=2):
+
+Calculate x = sum[2] - sum[0] = 2.
+Q.size() < K is true, so Q.push(x).
+After this, Q = {3, 2}.
+Iteration 3 (i=1, j=3):
+
+Calculate x = sum[3] - sum[0] = 4.
+Q.size() < K is true, so Q.push(x).
+After this, Q = {3, 2, 4}.
+Iteration 4 (i=1, j=4):
+
+Calculate x = sum[4] - sum[0] = 9.
+Q.size() >= K is true (heap size is 3), and Q.top() < x is true (top element is 3, which is less than 9).
+So, Q.pop() and Q.push(x).
+After this, Q = {9, 2, 4}.
+Iteration 5 (i=1, j=5):
+
+Calculate x = sum[5] - sum[0] = 2.
+Q.size() >= K is true (heap size is 3), and Q.top() < x is false (top element is 9, which is not less than 2).
+No changes to Q. */
     }
     // the top element will be then kth largest element
     return Q.top();
