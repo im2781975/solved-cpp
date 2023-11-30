@@ -1,4 +1,4 @@
-//find number of rotations in a sorted and rotated array. 
+//find number of rotations in a sorted and rotated array for being sorted
 #include <bits/stdc++.h> 
 using namespace std; 
 // Returns count of rotations for an array which is first sorted in ascending order, then rotated 
@@ -57,5 +57,5 @@ int main()
     int N = sizeof(arr) / sizeof(arr[0]); 
     cout << countRotations(arr, 0, N - 1); 
     cout<<"\n"<< countRotations(arr, N);
-    return 0; 
+    return 0;
 }
