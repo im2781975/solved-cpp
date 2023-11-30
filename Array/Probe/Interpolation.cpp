@@ -12,7 +12,10 @@ int interpolationSearch(int arr[], int lo, int hi, int x)
  
         // Probing the position with keeping uniform distribution in mind.
         pos = lo+ (((double)(hi - lo) / (arr[hi] - arr[lo]))* (x - arr[lo]));
-        // Condition of target found
+        // int pos=0+(((double)(14-0)/(arr[14]-arr[0]))*(18-arr[0]));
+        // int pos=0+(((double)(14-0)/(47-10)*(18-10));
+        // int pos=(double)14/(37*8);
+        
         if (arr[pos] == x)
             return pos;
         // If x is larger, x is in right sub array
@@ -41,7 +44,9 @@ int interpolationSearch(int arr[], int n, int x)
         int pos = low + (((double)(high - low) /
             (arr[high] - arr[low])) * (x - arr[low]));
    
-        // Condition of target found
+        // int pos=0+(((double)(14-0)/(arr[14]-arr[0]))*(18-arr[0]));
+        // int pos=0+(((double)(14-0)/(47-10)*(18-10));
+        // int pos=(double)14/(37*8);
         if (arr[pos] == x)
             return pos;
         // If x is larger, x is in upper part
