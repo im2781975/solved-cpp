@@ -13,11 +13,13 @@ void move_zeros_to_right(vector<int>& m)
               i--; 
               // The length gets decresed after erasing each element 
               length--; 
+//Iterates through the vector and removes each zero encountered. The loop adjusts the iterator (i), length, and count accordingly
         } 
     } 
     for (int i = 0; i < count; i++) { 
         // inserting the zero into vector 
         m.push_back(0); 
+    //Inserts the counted number of zeros to the right side of the vector
     } 
     cout << "\narray after shifting zeros to right side: ";
     for (int i = 0; i < m.size(); i++) { 
