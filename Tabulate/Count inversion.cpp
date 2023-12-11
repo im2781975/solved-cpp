@@ -1,10 +1,5 @@
-/* takes n integer numbers, and counts the number of inversions in the array using divide and conquer algorithm in O(nlogn). Two elements a[i] and a[j] form an inversion if i < j and a[i] > a[j].
-->4
-6 1 3 2
-<-4
-6
-5 6 7 8 0 1
-<-8 */
+// takes n integer & counts the number of inversions in the array using Merge. Two elements a[i] and a[j] form an inversion if i < j and a[i] > a[j].
+//number of inversions in an array is a measure of how far the array is from being sorted.
 #include<bits/stdc++.h>
 using namespace std;
 int trg, tot_count;
@@ -85,3 +80,6 @@ int main()
     vector<int>ans = merge_sort(v);
     cout<< tot_count << endl;
 }
+/*->4
+6 1 3 2
+<-4 */
