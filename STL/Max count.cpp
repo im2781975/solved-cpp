@@ -4,15 +4,15 @@
 #include <vector>
 #include <sstream>
 #include <algorithm>
-
+using namespace std;
 int main() {
-    std::string text;
-    std::cout << "Enter a text: ";
-    std::getline(std::cin, text);
+    string text;
+    cout << "Enter a text: ";
+    getline(cin, text);
 
-    std::map<std::string, int> wordCount;
-    std::istringstream iss(text);
-    std::string word;
+    map<string, int> wordCount;
+    istringstream iss(text);
+    string word;
 
     while (iss >> word) {
         // Remove punctuation and convert to lowercase (for case insensitivity)
@@ -26,9 +26,8 @@ int main() {
         }
         wordCount[word]++;
     }
-
     int maxCount = 0;
-    std::string maxWord = "";
+    string maxWord = "";
 
     for (const auto& pair : wordCount) {
         if (pair.second > maxCount || (pair.second == maxCount && pair.first < maxWord)) {
@@ -36,9 +35,6 @@ int main() {
             maxWord = pair.first;
         }
     }
-
-    std::cout << "Maximum occurring word: " << maxWord << " (count: " << maxCount << ")\n";
-
+    cout << "Maximum occurring word: " << maxWord << " (count: " << maxCount << ")\n";
     return 0;
 }
-
