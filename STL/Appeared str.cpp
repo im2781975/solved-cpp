@@ -20,7 +20,8 @@ int main() {
             cout << mp[s] << endl;
         }
         // Update the last index of the string.
-        mp[s] = i;
+        mp[s]=i;
+        //return the last location of the character.
     }
     return 0;
 }
