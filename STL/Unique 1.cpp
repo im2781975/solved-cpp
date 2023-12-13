@@ -2,22 +2,21 @@
 using namespace std;
 void print(vector<int>vect)
 {
-    int n=vect.size();
-    vector<int>u,d;
-    for(int i=0; i<n; i++)
+    vector<int>unique,duplicate;
+    for(int i=0; i<vect.size(); i++)
     {
-        if(find(u.begin(),u.end(),vect[i])==u.end())
+        if(find(unique.begin(),unique.end(),vect[i])==unique.end())
         {
-            u.push_back(vect[i]);
+            unique.push_back(vect[i]);
         }
         else
         {
-            d.push_back(vect[i]);
+            duplicate.push_back(vect[i]);
         }
     }
-    for(int i=0; i<d.size(); i++)
+    for(int i=0; i<unique.size(); i++)
     {
-        cout<<d[i]<<" ";
+        cout<<unique[i]<<" ";
     }
 }
 void printDuplicates(int arr[], int n)
@@ -46,6 +45,6 @@ int main()
     int n=sizeof(arr)/ sizeof(arr[0]);
     vector<int>vect(arr,arr+n);
     printDuplicates(arr,n);
-    cout <<"\nDuplicate item are (Vector): ";
+    cout <<"\nUnique item are (Vector): ";
     print(vect);
 }
