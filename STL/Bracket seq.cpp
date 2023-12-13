@@ -1,9 +1,9 @@
 #include <iostream>
 #include <stack>
 #include <string>
-
-bool isValidBracketSequence(const std::string &sequence) {
-    std::stack<char> stack;
+using namespace std;
+bool isValidBracketSequence(const string &sequence) {
+    stack<char> stack;
 
     for (char bracket : sequence) {
         if (bracket == '(' || bracket == '[' || bracket == '{') {
@@ -28,14 +28,14 @@ bool isValidBracketSequence(const std::string &sequence) {
 }
 
 int main() {
-    std::string input;
-    std::cout << "Enter a bracket sequence: ";
-    std::cin >> input;
+    string input;
+    cout << "Enter a bracket sequence: ";
+    cin >> input;
 
     if (isValidBracketSequence(input)) {
-        std::cout << "Yes" << std::endl;
+        cout << "Yes" ;
     } else {
-        std::cout << "No" << std::endl;
+        cout << "No" ;
     }
 
     return 0;
