@@ -1,8 +1,5 @@
-// C++ program to demonstrate performance of 
-// C qsort and C++ sort() algorithm 
 #include <bits/stdc++.h> 
 using namespace std; 
-  
 // Number of elements to be sorted 
 #define N 1000000 
   
@@ -11,8 +8,6 @@ int compare(const void * a, const void * b)
 { 
     return ( *(int*)a - *(int*)b ); 
 } 
-  
-// Driver program to test above functions 
 int main() 
 { 
     int arr[N], dupArr[N]; 
