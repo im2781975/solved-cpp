@@ -6,6 +6,7 @@ int setBitCount(int num){
     int count = 0;
     while ( num ) 
     {
+        // num & 1 checks the least significant bit. In our example, 1101 & 0001 results in 0001 (1 in decimal).Since the result is non-zero, the condition is true, and count is incremented to 1.
         if ( num & 1)
         count++;
         num >>= 1;
