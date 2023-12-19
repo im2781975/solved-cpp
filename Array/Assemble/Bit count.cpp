@@ -1,7 +1,7 @@
 //sort an array according to count of set bits. 
 #include<bits/stdc++.h>
 using namespace std;
- 
+//function calculates and returns the count of set bits (number of 1s) in a given integer.
 int setBitCount(int num){
     int count = 0;
     while ( num ) 
@@ -46,8 +46,7 @@ void sortBySetBitCount(int arr[], int n)
    
     for( int i = 0 ; i < n ; ++i ) 
     {
-        count.insert({(-1) * 
-            setBitCount(arr[i]), arr[i]});
+        count.insert({(-1) * setBitCount(arr[i]), arr[i]});
     }
     for(auto i : count)
     cout << i.second << " " ;
