@@ -26,17 +26,42 @@ bool isValidBracketSequence(const string &sequence) {
 
     return stack.empty();
 }
+bool valid(string s) {
+    stack<char> st;
+
+    for (int i = 0; i < s.size(); i++) {
+        char br = s[i];
+        switch (br) {
+            case '(':
+            case '{':
+            case '[':
+                st.push(br);
+                break;
+            case ')':
+            case '}':
+            case ']':
+                if (st.empty() || (br == ')' && st.top() != '(') || (br == '}' && st.top() != '{') || (br == ']' && st.top() != '[')) {
+                    return false;
+                }
+                st.pop();
+                break;
+        }
+    }
+    return st.empty();
+}
 
 int main() {
-    string input;
-    cout << "Enter a bracket sequence: ";
-    cin >> input;
-
-    if (isValidBracketSequence(input)) {
+    string n;
+    cin >> n;
+    if (valid(n))
+        cout << "Yes";
+    else
+        cout << "No";
+    if (isValidBracketSequence(n)) {
         cout << "Yes" ;
     } else {
         cout << "No" ;
     }
-
     return 0;
 }
+
