@@ -8,7 +8,7 @@ bool isPalindrome(const string& input) {
     
     for(int i=0; i<dq.size(); i++)
     {
-        dq.push_back(input);
+        dq.push_back(input[i]);
     }
     // Check if it's a palindrome
     while (dq.size() > 1) {
@@ -16,7 +16,7 @@ bool isPalindrome(const string& input) {
             return false;
         }
         dq.pop_front();
-        da.pop_back();
+        dq.pop_back();
     }
     return true; 
 }
