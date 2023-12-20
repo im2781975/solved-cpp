@@ -1,12 +1,4 @@
- /*takes n integer numbers and an integer k, and how many pairs of numbers in the array which sums to k.
-->5
-6 1 3 2 4
-5
-<-2
-->6
-5 6 7 8 0 1
-16
-<-0 */
+ //takes n integer numbers and an integer k, and how many pairs of numbers in the array which sums to k.
 #include<bits/stdc++.h>
 using namespace std;
 vector<int>marge_sort(vector<int>&a,int k)
@@ -91,3 +83,7 @@ int main ()
     vector<int> sorteded = marge_sort(num, target);
     cout << checkPairSum(sorteded, n, target)<<endl;
 }
+/*->5
+6 1 3 2 4
+5
+<-2 */
