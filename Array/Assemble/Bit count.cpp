@@ -44,9 +44,9 @@ void sortBySetBitCnt(int arr[],int n)
 void sortBySetBitCount(int arr[], int n)
 {    
     multimap< int, int > count;
-   
     for( int i = 0 ; i < n ; ++i ) 
     {
+        //Multiplies the set bit count by -1 to negate it, ensuring a descending order sort.
         count.insert({(-1) * setBitCount(arr[i]), arr[i]});
     }
     for(auto i : count)
