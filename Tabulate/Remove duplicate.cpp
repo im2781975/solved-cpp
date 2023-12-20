@@ -1,7 +1,3 @@
-/*Write a program to remove duplicate numbers from an array and print the remaining elements in sorted order.
-->5
-6 3 2 3 5
-<-2 3 5 6 */
 #include<bits/stdc++.h>
 using namespace std;
 vector<int> marge_sort(vector<int>&a)
