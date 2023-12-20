@@ -1,4 +1,4 @@
-//Minimum কতোগুলো কয়েন ব্যবহার করে n বানানো যায়।
+//how much coin need for complete n
 #include<bits/stdc++.h>
 using namespace std;
 vector<int>coins={1,3,4};
@@ -10,9 +10,7 @@ int coin_change(int n)
     for(int i=0;i<coins.size();i++)
     {
         if(n>=coins[i])
-        {
             ans=min(ans,1+coin_change(n-coins[i]));
-        }
     }
     return ans;
 }
