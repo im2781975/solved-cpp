@@ -25,6 +25,7 @@ int getNumOfInversions(vector<int>& A) {
  
         // Find the current minimum's index the index y can represent how many minimums on the left
         int y = upper_bound(x.begin(), x.end(), i) - x.begin();
+        //return maximum value index;
  
         // i can represent how many elements on the left
         // i - y can find how many bigger nums on the left
