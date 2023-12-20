@@ -49,9 +49,9 @@ void sortBySetBitCount(int arr[], int n)
         //Multiplies the set bit count by -1 to negate it, ensuring a descending order sort.
         count.insert({(-1) * setBitCount(arr[i]), arr[i]});
     }
-    for(auto i : count)
-    cout << i.second << " " ;
-    cout << "\n" ;
+    multimap<int,int>::iterator it;
+    for(it=count.begin(); it!=count.end(); it++)
+        cout<<it->first<<" "<<it->second<<"\n";
 }
 int main() 
 {
