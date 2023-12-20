@@ -1,19 +1,13 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-
 int main()
 {
     int n;
-    //5
     cin >> n;
     vector<int> arr(n);
-    
     for (int i = 0; i < n; i++)
-    {
         cin >> arr[i];
-        //2 3 4 5 3
-    }
 
     for (int i = 0; i < n; i++)
     {
@@ -28,6 +22,5 @@ int main()
         }
         cout << i << " " << ans << "\n";
     }
-    
     return 0;
 }
