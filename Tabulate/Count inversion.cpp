@@ -6,6 +6,7 @@ int trg, tot_count;
 
 int pairSum(vector<int>a, vector<int>b)
 {
+    //it will count unique pair sum.like vect_a={1,2,3};b={1,2,3};sum =a[i]+b[i].sum will be unique
     int n = a.size() + b.size(), ix1 = 0, ix2 = 0, sum = 0;
     for(int i = 0 ; i < n; i++) 
     {
