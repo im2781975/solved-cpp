@@ -42,6 +42,7 @@ int minSwaps(vector<int> &v)
         }
          
         // Second is not equal to i
+        //After the swap, it checks if the current element is now in its correct position. If not, it decrements i to recheck the current index in the next iteration, ensuring that the element at the current index is in the correct position.
         if(i != t[i].second)
             --i;
         ans++;
