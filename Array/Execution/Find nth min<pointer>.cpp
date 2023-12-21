@@ -15,6 +15,7 @@ int findKthSmallestNumber(int arr[], int n, int k) {
     while (k > 0) {
         if (count[num] > 0) 
             count[num]--;
+            //decreament frequency
          else {
             k--;
          }
