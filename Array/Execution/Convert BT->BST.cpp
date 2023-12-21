@@ -29,14 +29,16 @@ int minSwaps(vector<int> &v)
     sort(t.begin(), t.end());
     for(int i = 0; i < t.size(); i++)
     {
-        // second element is equal to i
+        //if the current element is already in its correct position. If it is, the loop continues to the next iteration without performing any swaps.
         if(i == t[i].second)
             continue;
         else
         {
             // swapping of elements according BST method
             swap(t[i].first, t[t[i].second].first);
+            //it swaps the values of the current element with the value of the element that should be at the current index according to the sorted order.
             swap(t[i].second, t[t[i].second].second);
+            //updates the index information, ensuring that the current element is now at the index it should be according to the sorted order.
         }
          
         // Second is not equal to i
