@@ -1,18 +1,12 @@
-// C++ program to find triplets in a given
-// array whose sum is zero
+//find triplets in a given array whose sum is zero
 #include <bits/stdc++.h>
 using namespace std;
- 
-// function to print triplets with 0 sum
+
 void findTriplets(int arr[], int n)
 {
     bool found = false;
- 
-    // sort array elements
     sort(arr, arr + n);
- 
     for (int i = 0; i < n - 1; i++) {
-        // initialize left and right
         int l = i + 1;
         int r = n - 1;
         int x = arr[i];
@@ -25,24 +19,18 @@ void findTriplets(int arr[], int n)
                 found = true;
                 //   break;
             }
- 
-            // If sum of three elements is less
-            // than zero then increment in left
+            // If sum of three elements is less than zero then increment in left
             else if (x + arr[l] + arr[r] < 0)
                 l++;
  
-            // if sum is greater than zero then
-            // decrement in right side
+            // if sum is greater than zero then decrement in right side
             else
                 r--;
         }
     }
- 
     if (found == false)
         cout << " No Triplet Found" << endl;
 }
- 
-// Driven source
 int main()
 {
     int arr[] = { 0, -1, 2, -3, 1 };
