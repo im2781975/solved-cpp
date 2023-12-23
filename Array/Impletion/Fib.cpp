@@ -12,7 +12,7 @@ int fibonacciSearch(int arr[], int n, int x) {
         fib2 = fib3;
         fib3 = fib1 + fib2;
     }
-    // Initialize variables for the current and previous split points
+    // Initialize variables for the current and previous split points."split point" refers to a position in the array where the search space is divided into two parts. The variable used to keep track of this split point is called offset in the provided code.
     int offset = -1;
     while (fib3 > 1) {
         int i = min(offset + fib2, n - 1);
