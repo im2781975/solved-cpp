@@ -1,4 +1,3 @@
-#
 #include <bits/stdc++.h> 
 using namespace std; 
 int singleelement(int arr[], int n) 
