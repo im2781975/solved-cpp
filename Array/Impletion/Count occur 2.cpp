@@ -1,19 +1,18 @@
+#
 #include <bits/stdc++.h> 
 using namespace std; 
 int singleelement(int arr[], int n) 
 { 
-      //hashmap to store frequency 
-      unordered_map<int,int> mm; 
+      unordered_map<int,int> mp; 
       for(int i=0;i<n;i++) 
     { 
-          //storing frequency 
-          mm[arr[i]]++; 
+          mp[arr[i]]++; 
     } 
-    for(auto x:mm) 
-    { 
-          //returning element with frequency 1 
-          if(x.second==1) return x.first; 
-    } 
+    for(auto it=mp.begin(); it!=mp.end(); it++)
+    {
+        if(it->second==1)
+            cout<<it->first;
+    }
 } 
 int singleElement(int arr[], int n) 
 { 
@@ -22,6 +21,7 @@ int singleElement(int arr[], int n)
     while (low <= high) { 
         mid = (low + high) / 2; 
         if (arr[mid] == arr[mid ^ 1]) 
+        //XOR (^ 1) is used to find the adjacent element. If the middle element is equal to its adjacent element, it means the single element is on the right side, so update the low pointer accordingly.
             low = mid + 1; 
         else
             high = mid - 1; 
