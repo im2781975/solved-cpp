@@ -19,17 +19,17 @@ void print2largest(int arr[], int arr_size) {
     cout << "\nThere is no second largest element\n";
 }
 
-void print2ndlargest(vector<int> v) {
-    set<int> s(v.begin(), v.end());
-    v.clear();
+void print2ndlargest(vector<int> vec) {
+    set<int>s(vec.begin(), vec.end());
+    vec.clear();
     // Insert all elements back into the vector in sorted order.
-    for (auto it : s) 
-    v.push_back(it);
-    // The size of the updated vector.
-    int n = v.size();
-
+    set<int>::iterator it;
+    for(it=s.begin(); it!=s.end(); it++)
+    {
+        vec.push_back(*it);
+    }
     cout << "\nThe Second Largest Element in Vector is: ";
-    cout << v[n - 2] ;
+    cout<<vec[vec.size()-1];
 }
 
 int main() {
