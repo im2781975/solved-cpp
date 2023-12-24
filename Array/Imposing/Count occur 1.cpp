@@ -1,25 +1,24 @@
 // find k numbers with most occurrences in the given array
 #include <bits/stdc++.h>
 using namespace std;
-vector<int>print_N_mostFrequentNumber(vector<int>& nums,int k,
-    vector<int>& out)
+vector<int>print_N_mostFrequentNumber(vector<int>& arr,int k,
+    vector<int>& ans)
 {
-    // map for counting the number of occurences
-    unordered_map<int, int> counts;
-    // stroing the frequency of each element
-    for (int num : nums)
-        ++counts[num];
-    // creating a vector for storing the frequency
-    vector<pair<int, int> > freqs;
-    for (auto vt : counts)
-        freqs.push_back({ vt.second, vt.first });
-    // using the user defined function nth_element to extract the values
-    nth_element(freqs.begin(), freqs.end() - k,freqs.end());
-    // using user defined function transform to make the desired changes
-    transform(freqs.end() - k, freqs.end(), out.begin(),
-              [](pair<int, int> vt) { return vt.second; });
-    // store the result in the out vector
-    return out;
+    unordered_map<int,int>mp;
+    for(int i=0; i<arr.size(); i++)
+    {
+        mp[arr[i]]++;
+    }
+    vector<pair<int, int>>freq;
+    for(auto it=mp.begin(); it!=mp.end(); it++)
+    {
+        freq.push_back({it->second,it->first});
+    }
+    nth_element(freq.begin(), freq.end()-k, freq.end());
+    
+    transform(freq.end()-k,freq.end(),ans.begin(),[](pair<int, int>vec){return vec.second;});
+    
+    return ans;
 }
 int main()
 {
