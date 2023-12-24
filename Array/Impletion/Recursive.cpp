@@ -1,5 +1,11 @@
 #include <iostream>
 using namespace std;
+int MultArray(int arr[], int n)
+{
+    if(n==0) 
+        return 1;
+    return arr[n-1] * MultArray( arr, n-1);
+}
 int sumArray(int arr[], int size) {
     if (size == 0) {
         return 0;
@@ -13,9 +19,9 @@ int main() {
     int size = sizeof(arr) / sizeof(arr[0]);
     
     int result = sumArray(arr, size);
-    
-    cout << "The sum of the elements in the array is: " << result ;
-    
+    int res = MultArray(arr, size);
+    cout << "\nThe sum of the elements in the array is: " << result ;
+    cout << "\nThe mult of the elements in the array is: " << res ;
     return 0;
 }
 
