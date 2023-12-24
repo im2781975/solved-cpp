@@ -5,7 +5,7 @@ int minLength(vector<int>& arr)
 {
     vector<int> temp = arr;
     sort(temp.begin(), temp.end());
-    
+    //returns the minimum length of a subarray that, when sorted, would make the entire array sorted.
     // initializing indices
     int s = 0, e = 0;
     // checking the unequal element from start and storing it in s variable
