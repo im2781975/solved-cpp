@@ -1,8 +1,4 @@
-/*find the maximum element in an array.
-->5
-1 3 5 2 4
-->5 */
- #include <bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 int findMax(int arr[], int n)
 {
@@ -20,6 +16,6 @@ int main()
         cin >> arr[i];
     }
     int max = findMax(arr, n);
-    cout << max << endl;
+    cout <<"Maximum element is: "<<max;
     return 0;
 }
