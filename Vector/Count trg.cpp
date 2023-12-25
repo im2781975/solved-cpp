@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 int countMatching(vector<int> arr, int b, int e, int target)
 {
     int m = (b + e) / 2;
@@ -8,43 +7,34 @@ int countMatching(vector<int> arr, int b, int e, int target)
     {
         int count = 0;
         if (arr[b] == target)
-        {
             count++;
-        }
+            
         if (arr[e] == target && b != e)
-        {
             count++;
-        }
+            
         return count;
     }
     else if (arr[m] > target)
-    {
         return countMatching(arr, b, m - 1, target);
-    }
+        
     else if (arr[m] < target)
-    {
         return countMatching(arr, m + 1, e, target);
-    }
     else
-    {
         return countMatching(arr, b, m - 1, target) + 1 + countMatching(arr, m + 1, e, target);
-    }
 }
-
 int main()
 {
     int n;
-    cin >> n; //7
-    vector<int> ary(n);
+    cin >> n; 
+    vector<int> arr(n);
     for (int i = 0; i < n; i++)
     {
-        cin >> ary[i];
-        //1 3 4 6 6 9 17     
+        cin >> arr[i];
     }
     int target; 
-    cin >> target;  //6
-    if (countMatching(ary, 0, ary.size() - 1, target) > 1)
-        cout << "YES" << endl;
+    cin >> target;  
+    if (countMatching(arr, 0, arr.size() - 1, target) > 1)
+        cout << "\nYES" ;
     else
-        cout << "NO" << endl;
+        cout << "\nNO" ;
 }
