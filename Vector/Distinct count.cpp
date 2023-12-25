@@ -3,19 +3,14 @@ using namespace std;
 
 int main() {
     int i, ans = 0;
-    // ios_base::sync_with_stdio(0);
-    // cin.tie(0);
-
     int n;
-    cin >> n; //5
+    cin >> n; 
     vector<int> arr;
     arr.resize(n);
 
     for (i = 0; i < n; i++) {
         cin >> arr[i];
-        //1 2 2 3 4
     }
-
     sort(arr.begin(), arr.end());
 
     for (i = 0; i < n; i++) {
@@ -26,8 +21,6 @@ int main() {
         if (arr[i] != arr[i - 1])
             ans++;
     }
-
     cout << ans << "\n";
     return 0;
 }
-
