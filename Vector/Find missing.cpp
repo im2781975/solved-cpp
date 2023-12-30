@@ -2,23 +2,17 @@
 using namespace std;
 
 int main() {
-    int n;
-    //5
+    int n, k;
     cin >> n;
     vector<int> a(n + 1);
-
-    int k;
     for (int i = 1; i < n; i++)
     {
-        //1 2 5 4
         cin >> k;
         a[k] = 1; 
-        //Each input integer is stored in the variable k, and its presence is marked in the a vector by setting a[k] to 1.
     }
     for (int i = 1; i <= n; i++) {
-        if (a[i] == 0) {
+        if (a[i] == 0) 
             cout << i << " \n";
-        }
     }
     return 0;
 }
