@@ -9,19 +9,13 @@ bool isPalindrome(string s)
         return false;
     return isPalindrome(s.substr(1, s.length() - 2));
 }
-
 int main()
 {
     string s;
     cin >> s;
     if (isPalindrome(s))
-    {
         cout << "Yes" << endl;
-    }
     else
-    {
         cout << "No" << endl;
-    }
     return 0;
 }
-
