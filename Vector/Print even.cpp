@@ -10,7 +10,6 @@ vector<int> even_generator(vector<int>& arr) {
     }
     return even;
 }
-
 int main() {
     vector<int> arr{1, 2, 3, 4, 5, 6, 7, 8, 9};
     vector<int> even = even_generator(arr);
