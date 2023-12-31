@@ -1,28 +1,8 @@
-You are given an array of n positive integers. The next line will contain a q.
-Then the next q lines contains q queries, in each query you will be given two values l and r(The index number, where l<r).You need to tell the sum between l and r in each query.
-
-Sample Input - 
-5
-2 4 1 3 9
-4
-1 3
-2 4
-2 5
-1 5
-Sample Output -
-7
-8
-17
-19
-
->> Solution -
-
+// given an array of n positive integers. next line will contain a q which contains q queries, in each query you will be given two values l and r(The index number, where l<r).You need to tell the sum between l and r in each query.
 #include <bits/stdc++.h>
 using namespace std;
 
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(NULL);
 
     int n;
     cin >> n;
