@@ -1,4 +1,5 @@
-//A frog is currently on stone i.he can jump on stone i+1 or i+2.here |hi-hj| will be incurred where j is the strone where landed.find minimum possible total cost reaching N stone.
+//A frog is currently on stone i.he can jump on stone i+1 or i+2.here |hi-hj| will be incurred 
+//where j is the stone where landed.find minimum possible total cost reaching N stone.
 #include<bits/stdc++.h>
 using namespace std;
 const int N=101;
@@ -25,12 +26,10 @@ int main()
     int n;
     cin>>n;
     for(int i=1; i<=n; i++)
-    {
         cin>>h[i];
-    }
+        
     for(int i=1; i<=n; i++)
-    {
         dp[i]=-1;
-    }
+        
     cout<<stone(n);
 }
