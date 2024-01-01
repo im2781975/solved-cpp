@@ -10,41 +10,28 @@ int main()
     int n, trg;
     cin >> n >> trg;
     for (int i = 1; i <= n; i++)
-    {
         cin >> num[i];
-    }
-    
-    // Initialize dp array
     for (int i = 0; i <= n; i++)
     {
         for (int j = 0; j <= trg; j++)
-        {
-            dp[i][j] = 0; // Initialize all elements to 0
-        }
+            dp[i][j] = 0;
     }
-    
-    dp[0][0] = 1; // Assuming dp[0][0] should be 1 if you can reach a sum of 0.
-
+    dp[0][0] = 1; 
     for (int i = 1; i <= n; i++)
     {
         for (int j = 0; j <= trg; j++)
         {
             int a = dp[i - 1][j];
-
-            if (j >= num[i]) // You want to check if j is greater than or equal to num[i]
+            if (j >= num[i])
             {
                 int b = dp[i - 1][j - num[i]];
                 int ans = a || b;
                 dp[i][j] = ans;
             }
             else
-            {
-                dp[i][j] = a; // You want to set dp[i][j] to a in this case
-            }
+                dp[i][j] = a;
         }
     }
-
     cout << dp[n][trg];
-    return 0; // You should include a return statement at the end of the main function.
+    return 0;
 }
-
