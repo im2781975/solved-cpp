@@ -18,7 +18,7 @@ int main()
     {
         dp[0][i]=0;
     }
-    for(int i=1;i<=n;i++) // Start from i=1, not i=0
+    for(int i=1;i<=n;i++)
     {
         for(int j=0; j<=cap; j++)
         {
@@ -28,10 +28,9 @@ int main()
             }
             else
             {
-                dp[i][j]=max(val[i]+dp[i-1][j-wt[i]], dp[i-1][j]); // Remove the extra closing parenthesis here
+                dp[i][j]=max(val[i]+dp[i-1][j-wt[i]], dp[i-1][j]);
             }
         }
     }
     cout<<dp[n][cap];
 }
-
