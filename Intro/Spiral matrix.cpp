@@ -5,27 +5,20 @@ void printSpiralMatrix(int rows, int cols, int matrix[][4]) {
     int top = 0, bottom = rows - 1, left = 0, right = cols - 1;
 
     while (top <= bottom && left <= right) {
-        // Print top row
         for (int i = left; i <= right; i++) {
             cout << matrix[top][i] << " ";
         }
         top++;
-
-        // Print right column
         for (int i = top; i <= bottom; i++) {
             cout << matrix[i][right] << " ";
         }
         right--;
-
-        // Print bottom row (if there is one)
         if (top <= bottom) {
             for (int i = right; i >= left; i--) {
                 cout << matrix[bottom][i] << " ";
             }
             bottom--;
         }
-
-        // Print left column (if there is one)
         if (left <= right) {
             for (int i = bottom; i >= top; i--) {
                 cout << matrix[i][left] << " ";
@@ -34,7 +27,6 @@ void printSpiralMatrix(int rows, int cols, int matrix[][4]) {
         }
     }
 }
-
 int main() {
     int rows, cols;
     cout << "Enter the number of rows: ";
@@ -53,6 +45,5 @@ int main() {
 
     cout << "Spiral Matrix: ";
     printSpiralMatrix(rows, cols, matrix);
-
     return 0;
 }
