@@ -1,4 +1,4 @@
-////count max happiness in  vacation days work which is 3.each two days work will not be same.
+//count max happiness in  vacation days work which is 3.each two days work will not be same.
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -43,4 +43,3 @@ int main() {
     }
     cout << max_happiness << endl;
 }
-
