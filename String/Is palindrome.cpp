@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-
+using namespace std;
 bool is_palindrome(string str) {
     int n = str.size();
     int l = 0;
@@ -14,7 +14,6 @@ bool is_palindrome(string str) {
     }
     return true;
 }
-
 bool is_palindrome_recursive(string str) {
     if (str == "" || str.size() == 1) {
         return true;
@@ -24,24 +23,20 @@ bool is_palindrome_recursive(string str) {
         return is_palindrome_recursive(small_str) && (str[0] == str[n - 1]);
     }
 }
-
 int main() {
-    string test_str;
-    std::cout << "Enter a string: ";
-    std::cin >> test_str;
+    string str;
+    cout << "Enter a string: ";
+    cin >> str;
 
-    if (is_palindrome(test_str)) {
-        std::cout << "Iterative: It's a palindrome!" << std::endl;
+    if (is_palindrome(str)) {
+        cout << "Iterative: It's a palindrome!";
     } else {
-        std::cout << "Iterative: It's not a palindrome!" << std::endl;
+        cout << "Iterative: It's not a palindrome!" ;
     }
-
-    if (is_palindrome_recursive(test_str)) {
-        std::cout << "Recursive: It's a palindrome!" << std::endl;
+    if (is_palindrome_recursive(str)) {
+        cout << "Recursive: It's a palindrome!" ;
     } else {
-        std::cout << "Recursive: It's not a palindrome!" << std::endl;
+        cout << "Recursive: It's not a palindrome!" ;
     }
-
     return 0;
 }
-
