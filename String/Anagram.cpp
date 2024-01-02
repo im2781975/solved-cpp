@@ -1,4 +1,4 @@
-//check whether two strings are anagram of each other using std :: is_permutation 
+//check whether two strings are anagram of each other
 #include <iostream> 
 #include <algorithm> 
 using namespace std;
