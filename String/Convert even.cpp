@@ -5,8 +5,6 @@ int main()
 {
     string s;
     cin >> s;
-    //->abcdefghijk
-    
     for (int i = 0; i < s.size(); i++)
     {
         if (i % 2 == 0)
@@ -21,4 +19,3 @@ int main()
     cout << s << "\n";
     return 0;
 }
-
