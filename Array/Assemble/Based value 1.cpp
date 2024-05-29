@@ -1,41 +1,34 @@
-// Function to sort array containing 0, 1 and 2
-#include <iostream>
+//Function to sort array containing 0, 1 and 2
+#include<bits/stdc++.h>
 using namespace std;
- 
 void sort012(int arr[], int n)
 {
-    int l=0;
-    int r=n-1;
-     
-    for(int i=0;i<n && i<=r;){
-        // current element is 0
-        if(arr[i]==0){
-            swap(arr[l],arr[i]);
-            l++;
+    int l = 0, r = n-1;
+    for(int i = 0; i< n && i<= r;)
+    {
+        if(arr[i] == 0)
+        {
+            swap(arr[l], arr[i]);
+            l++; i++;
+        }
+        else if(arr[i] == 2)
+        {
+            swap(arr[r], arr[i]);
+            r--; i++;
+        }
+        else 
             i++;
-        }
-        // current element is 2
-        else if(arr[i]==2){
-            swap(arr[i],arr[r]);
-            r--;
-        }
-        // current element is 1
-        else{
-            i++;
-        }
     }
 }
-void printArray(int arr[], int arr_size)
+void print(int *arr, int n)
 {
-    for (int i = 0; i < arr_size; i++)
+    for(int i = 0; i < n; i++)
         cout << arr[i] << " ";
 }
 int main()
 {
-    int arr[] = { 0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1 };
-    int n = sizeof(arr) / sizeof(arr[0]);
+    int arr[]{2, 1, 0, 2, 1, 0, 0, 1, 1};
+    int n = sizeof(arr)/sizeof(arr[0]);
     sort012(arr, n);
-    printArray(arr, n);
-   
-    return 0;
+    print(arr, n);
 }
