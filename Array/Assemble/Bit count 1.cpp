@@ -1,17 +1,14 @@
 //sort an array according to count of set bits 
 #include <bits/stdc++.h>
 using namespace std;
-
 int countBits(int a)
 {
     int count = 0;
     while (a) {
         if (a & 1)
-    //checks if the least significant bit of a is 1 using the bitwise AND operation (a & 1). If true, it increments the count variable.
+        //if bits of a and bits(0001) return true cnts will be increase
             count += 1;
         a = a >> 1;
-        //for (>>)right shift value will be decreased
-        //for (<<)Left shift value will be increased
     }
     return count;
 }
@@ -19,7 +16,6 @@ int cmp(int a, int b)
 {
     int count1 = countBits(a);
     int count2 = countBits(b);
- 
     // this takes care of the stability of sorting algorithm too
     if (count1 <= count2)
         return false;
