@@ -2,15 +2,15 @@
 using namespace std;
 int sort(vector<int>& array, int l, int h, int k)
 {
-    int mid
-        = l + (h - l) / 2; 
+    int mid = l + (h - l) / 2; 
     int i = max(l, mid - k), j = i,end = min(mid + k, h);
-        //i starts at the max of l and (mid - k) as like max(0, 6 - 3) = 3.end is set to the minimum of (mid + k) and h . as like min(6 + 3, 12) = 9.
-    swap(array[mid],
-         array[end]);
+    
+    swap(array[mid], array[end]);
     while (j < end) {
         if (array[j] < array[end]) {
-        //If array[j] (element at index j) is less than array[end] (pivot element at index end), then swap array[i] and array[j], and increment i.After this loop, elements less than the pivot are on the left side of array[i], and elements greater are on the right side.
+        //If array[j] (element at index j) is less than array[end] (pivot element at index end), 
+        //then swap array[i] and array[j], and increment i.After this loop, elements less than the 
+        //pivot are on the left side of array[i], and elements greater are on the right side.
             swap(array[i++], array[j]);
         }
         j = j + 1;
@@ -18,7 +18,6 @@ int sort(vector<int>& array, int l, int h, int k)
     swap(array[end], array[i]);
     return i;
 }
- 
 void ksorter(vector<int>& array, int l, int h, int k)
 {
     if (l < h) {
@@ -32,14 +31,9 @@ int main()
     vector<int> array(
         { 3, 3, 2, 1, 6, 4, 4, 5, 9, 7, 8, 11, 12 });
     int k = 3;
-    cout << "Array before K sort\n";
-    for (int& num : array)
-        cout << num << ' ';
-    cout << endl;
     ksorter(array, 0, array.size() - 1, k);
     cout << "Array after K sort\n";
     for (int& num : array)
         cout << num << ' ';
     return 0;
 }
-
