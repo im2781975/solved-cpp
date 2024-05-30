@@ -1,12 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
- 
-bool fcompare(pair<int, pair<int, int> > p,pair<int, pair<int, int> > p1)
+bool fcompare(pair<int, pair<int, int> > a,pair<int, pair<int, int> > b)
 {
-    if (p.second.second != p1.second.second)
-        return (p.second.second > p1.second.second);
+    if (a.second.second != b.second.second)
+        return (a.second.second > b.second.second);
     else
-        return (p.second.first < p1.second.first);
+        return (a.second.first < b.second.first);
 }
 void sortByFrequency(int arr[], int n)
 {
@@ -16,14 +15,10 @@ void sortByFrequency(int arr[], int n)
             hash[arr[i]].second++;
         else
             hash[arr[i]] = make_pair(i, 1);
-    } 
-    // store the count of all the elements in the hashmap
-
-    auto it = hash.begin();
- 
+    }
     // Vector to store the Final Sortted order
     vector<pair<int, pair<int, int> > > b;
-    for (it; it != hash.end(); ++it)
+    for (auto it = hash.begin(); it != hash.end(); ++it)
         b.push_back(make_pair(it->first, it->second));
  
     sort(b.begin(), b.end(), fcompare);
@@ -38,8 +33,5 @@ int main()
 {
     int arr[] = { 2, 5, 2, 6, -1, 9999999, 5, 8, 8, 8 };
     int n = sizeof(arr) / sizeof(arr[0]);
- 
     sortByFrequency(arr, n);
- 
-    return 0;
 }
