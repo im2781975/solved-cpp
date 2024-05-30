@@ -1,6 +1,7 @@
-// sort even-placed elements in increasing & odd-placed in decreasing order with constant space complexity 
-#include <bits/stdc++.h> 
-using namespace std; 
+#include<bits/stdc++.h>
+using namespace std;
+// sort even-placed elements in increasing & odd-placed in 
+//decreasing order with constant space complexity
 void bitonicGenerator(int arr[], int n) 
 { 
     for (int i = 0; i < n; i++) { 
@@ -50,15 +51,33 @@ void bitonicGenerator(int arr[], int n)
     for (int j = 0; j < oddArr.size(); j++) 
         arr[i++] = oddArr[j]; 
 } 
+// sorts arr[0..n-1] in wave form arr[0] >= arr[1] <= arr[2] >= arr[3] <= arr[4] >= arr[5] ....
+void sortInWave(int arr[], int n)
+{
+    for (int i = 0; i < n; i+=2)
+    {
+        if (i >0 && arr[i-1] > arr[i] )
+            swap(&arr[i], &arr[i-1]);
+        if (i<n-1 && arr[i] < arr[i+1] )
+            swap(&arr[i], &arr[i + 1]);
+    }
+}
+void sortInWave(int arr[], int n)
+{
+    sort(arr, arr+n);
+    for (int i=0; i<n-1; i += 2)
+        swap(&arr[i], &arr[i+1]);
+}
 void print(int *arr, int n)
 {
-    for(int i = 0; i < n; i++)
+    for(int i = 0; i< n; i++)
         cout << arr[i] << " ";
 }
-int main() 
-{ 
-    int arr[] = { 1, 5, 8, 9, 6, 7, 3, 4, 2, 0 }; 
-    int n = sizeof(arr) / sizeof(arr[0]); 
-    bitonicGenerator(arr, n); 
-    print(arr, n);
+int main()
+{
+    int arr[] = {10, 90, 49, 2, 1, 5, 23};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    sortInWave(arr, n);
+    bitonicGenerator(arr, n);
+    return 0;
 }
