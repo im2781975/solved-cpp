@@ -71,6 +71,7 @@ void findSurpasser(int arr[], int n)
     unordered_map<int, int> hm;
 
     int dup[n];
+    //copies n bytes from the source memory area to the destination memory area.
     memcpy(dup, arr, n*sizeof(arr[0]));
  
     // Sort the copy and store inversion count for each element.
