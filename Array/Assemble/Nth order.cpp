@@ -2,7 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 void kth_elem(vector<int> arr, vector<int> q){
-    q[0] is The ending index & q[0] is the starting idx of the subarray (1-based index).
+   // q[0] is The ending index & q[0] is the starting idx of the subarray (1-based index).
     if (q[1] > arr.size()){
         cout<<"List index is out of range"<<endl;
         return;
@@ -11,7 +11,7 @@ void kth_elem(vector<int> arr, vector<int> q){
         cout<<"Kth element is not present"<<endl;
         return;
     }
-      else{
+    else{
           auto first = arr.begin() + q[0]-1;
         auto last = arr.begin() + q[1];
         vector<int> temp(first, last);
@@ -19,7 +19,6 @@ void kth_elem(vector<int> arr, vector<int> q){
         cout<<temp[q[2]-1]<<endl;
     }
 }
- 
 int main(){
     vector<int> arr = {3, 2, 5, 1, 8, 9};
     vector<int> query1 = {2, 5, 2};
