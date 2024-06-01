@@ -1,15 +1,13 @@
 // find surpasser count of each element in array
 #include <bits/stdc++.h>
 using namespace std;
-
-int merge(int arr[], int l, int m, int r,unordered_map<int, int> &hm)
+int merge(int *arr, int l, int m, int r,unordered_map<int, int> &hm)
 {
     int i, j, k;
     int n1 = m - l + 1;
     int n2 = r - m;
  
     int L[n1], R[n2];
- 
     //Copy data to temporary arrays L[] and R[] 
     for (i = 0; i < n1; i++)
         L[i] = arr[l + i];
@@ -19,35 +17,33 @@ int merge(int arr[], int l, int m, int r,unordered_map<int, int> &hm)
         
     //Merge the temporary array
     i = 0, j = 0, k = l;
-    int c = 0;
+    int cnt = 0;
     while (i < n1 && j < n2)
     {
         if (L[i] <= R[j])
         {
             // increment inversion count of L[i]
-            hm[L[i]] += c;
+            hm[L[i]] += cnt;
             arr[k++] = L[i++];
         }
         else
         {
             arr[k++] = R[j++];
             // inversion found
-            c++;
+            cnt++;
         }
     }
     //Copy the remaining elements of L[], if there are any 
     while (i < n1)
     {
-        hm[L[i]] += c;
+        hm[L[i]] += cnt;
         arr[k++] = L[i++];
     }
- 
     //Copy the remaining elements of R[], if there are any 
     while (j < n2)
         arr[k++] = R[j++];
 }
-
-int mergeSort(int arr[], int l, int r,unordered_map<int, int> &hm)
+int mergeSort(int *arr, int l, int r,unordered_map<int, int> &hm)
 {
     if (l < r)
     {
@@ -57,38 +53,28 @@ int mergeSort(int arr[], int l, int r,unordered_map<int, int> &hm)
         merge(arr, l, m, r, hm);
     }
 }
- 
-/* Function to print an array */
-void printArray(int arr[], int n)
+void printArray(int *arr, int n)
 {
-    for (int i = 0; i < n; i++)
-        printf("%d ", arr[i]);
-    printf("\n");
+    for(int i = 0; i < n; i++)
+        cout << arr[i] << " ";
 }
- 
 void findSurpasser(int arr[], int n)
 {
     unordered_map<int, int> hm;
-
     int dup[n];
     //copies n bytes from the source memory area to the destination memory area.
     memcpy(dup, arr, n*sizeof(arr[0]));
- 
     // Sort the copy and store inversion count for each element.
     mergeSort(dup, 0, n - 1, hm);
  
     printf("Surpasser Count of array is \n");
     for (int i = 0; i < n; i++)
-        printf("%d ", (n - 1) - i - hm[arr[i]]);
+        cout << (n - 1) - i - hm[arr[i]] << " ";
 }
 int main()
 {
     int arr[]{2, 7, 5, 3, 0, 8,1};
     int n = sizeof(arr) / sizeof(arr[0]);
- 
-    cout<<"Array is: ";
-    printArray(arr, n);
-    
     cout<<"\nAfter supassare array is: ";
     findSurpasser(arr, n);
     return 0;
