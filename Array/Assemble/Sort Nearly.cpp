@@ -8,9 +8,8 @@ void sortNearlySortedArray(int A[], int size, int k)
     for (i = 1; i < size; i++) {
         key = A[i];
         j = i - 1;
-  
-        /* Check if the previous element is greater than the current element, and shift elements to the right until the correct position is found, but only if the current element is more
-           than k positions away from its correct position */
+        //if the previous element is greater than the curr element,& shift elements to the right until the correct position is found, 
+        //but only if the current element is more than k positions away from its correct position
         while (j >= max(0, i - k) && A[j] > key) {
             A[j + 1] = A[j];
             j--;
@@ -46,20 +45,39 @@ void sortK(int arr[], int n, int k)
         pq.pop();
     }
 }
+// sort an array with adjacent swaps allowed
+bool checkForSorting(int arr[], int n)
+{
+    for (int i=0; i<n-1; i++)
+    {
+        if (arr[i] > arr[i+1])
+        {
+            if (arr[i] - arr[i+1] == 1)
+                swap(arr[i], arr[i+1]);
+            else
+                return false;
+        }
+    }
+    return true;
+}
 void printArray(int arr[], int size)
 {
     for (int i = 0; i < size; i++)
         cout << arr[i] << " ";
-    cout << endl;
+    cout << "\n";
 }
 int main()
 {
-    int A[] = {2, 6, 3, 12, 56, 8};
-    int size = 6;
+    int arr[]= {2, 6, 3, 12, 56, 8};
+    int n = sizeof(arr)/sizeof(arr[0]);
     int k = 3;
-    sortNearlySortedArray(A, size, k);   
-    
+    sortNearlySortedArray(arr, n, k);   
+
     sortK(arr, n, k);
     printArray(arr, n);
+    if (checkForSorting(arr, n))
+        cout << "Yes\n";
+    else
+        cout << "No\n";
     return 0;
 }
