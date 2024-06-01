@@ -1,34 +1,26 @@
-// CPP program to implement k-th order statistics
+// implement k-th order statistics
 #include <bits/stdc++.h>
 using namespace std;
- 
 const int MAX = 1000;
- 
 // Constructs a segment tree and stores tree[]
 void buildTree(int treeIndex, int l, int r, 
     vector<pair<int, int> > &a, vector<int> tree[])
 {
- 
-    /* l => start of range,
-        r => ending of a range
-        treeIndex => index in the Segment Tree/Merge 
-                    Sort Tree */
- 
-    /* leaf node */
+    //l => start of range, r => ending of a range
+    //treeIndex => index in the Segment Tree/Merge  Sort Tree
     if (l == r) {
         tree[treeIndex].push_back(a[l].second);
         return;
     }
- 
     int mid = (l + r) / 2;
- 
-    /* building left subtree */
+    
+    //building right subtree 
     buildTree(2 * treeIndex, l, mid, a, tree);
  
-    /* building left subtree */
+    // building left subtree
     buildTree(2 * treeIndex + 1, mid + 1, r, a, tree);
- 
-    /* merging left and right child in sorted order */
+    
+    // merging left and right child in sorted order 
     merge(tree[2 * treeIndex].begin(), 
         tree[2 * treeIndex].end(),
         tree[2 * treeIndex + 1].begin(), 
@@ -80,7 +72,6 @@ int main()
         v.push_back(make_pair(arr[i], i));
     }
     sort(v.begin(), v.end());
- 
     // Construct segment tree in tree[]
     vector<int> tree[MAX];
     buildTree(1, 0, n - 1, v, tree);
