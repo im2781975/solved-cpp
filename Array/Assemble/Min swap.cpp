@@ -1,17 +1,11 @@
 //find minimum number of swaps to reach a permutation with at most 2 left swaps allowed for every element 
 #include <bits/stdc++.h> 
 using namespace std; 
-
 int merge(int arr[], int temp[], int left, int mid, int right) 
 { 
-    int inv_count = 0; 
-    //i for left subarray
-    int i = left;
-    //j is for right subarray
-    int j = mid;   
-    //k is for resultant merged subarray
+    int inv_count = 0, i = left, j = mid; 
+    //resultant array
     int k = left;
-    
     while ((i <= mid - 1) && (j <= right)) 
     { 
         if (arr[i] <= arr[j]) 
@@ -25,7 +19,6 @@ int merge(int arr[], int temp[], int left, int mid, int right)
     //Copy the remaining elements of left subarray 
     while (i <= mid - 1) 
         temp[k++] = arr[i++]; 
-  
     //Copy the remaining elements of right subarray 
     while (j <= right) 
        temp[k++] = arr[j++]; 
@@ -33,7 +26,6 @@ int merge(int arr[], int temp[], int left, int mid, int right)
     //Copy back the merged elements to original array
     for (i = left; i <= right; i++)
         arr[i] = temp[i]; 
-  
     return inv_count; 
 } 
 
@@ -52,21 +44,20 @@ int _mergeSort(int arr[], int temp[], int left, int right)
         inv_count += merge(arr, temp, left, mid+1, right); 
     } 
     return inv_count; 
-} 
-  
+}
 //function sorts the input array and returns the number of inversions in the array 
-int mergeSort(int arr[], int array_size) 
+int mergeSort(int arr[], int n) 
 { 
-    int *temp = (int *)malloc(sizeof(int)*array_size); 
-    return _mergeSort(arr, temp, 0, array_size - 1); 
-} 
-  
+    int *temp = (int *)malloc(sizeof(int)*n); 
+    return _mergeSort(arr, temp, 0, n - 1); 
+}
 // method returns minimum number of swaps to reach permuted array 'arr' 
 int minSwapToReachArr(int arr[], int N) 
 { 
     for (int i = 0; i < N; i++) 
     { 
-        //if element has distance more than 2 from its actual position then it is not possible to reach permuted array just by swapping with 2 positions left elements so returning -1   
+        //if element has distance more than 2 from its actual position then 
+        //it isn't possible to reach permuted array just by swapping with 2 positions left elements so returning -1   
         if ((arr[i] - 1) - i > 2) 
             return -1; 
     } 
@@ -74,7 +65,6 @@ int minSwapToReachArr(int arr[], int N)
     int numOfInversion = mergeSort(arr, N); 
     return numOfInversion; 
 } 
- 
 int main() 
 { 
     int arr[] = {1, 2, 5, 3, 4}; 
@@ -85,4 +75,4 @@ int main()
     else
         cout << res << endl; 
     return 0; 
-} 
+}
