@@ -1,16 +1,13 @@
 // print array of strings in sorted order without copying one string into another
 #include <bits/stdc++.h>
 using namespace std;
-
 void printInSortedOrder(string arr[], int n)
 {
     int index[n];
     int i, j, min;
-     
     // Initially the index of the strings are assigned to the 'index[]' 
     for (i=0; i<n; i++)
         index[i] = i;
-     
     // selection sort 
     for (i=0; i<n-1; i++)    
     {
@@ -21,7 +18,6 @@ void printInSortedOrder(string arr[], int n)
             if (arr[index[min]].compare(arr[index[j]]) > 0)
                 min = j;
         }
-         
         // index of the smallest string is placed
         // at the ith index of 'index[]'
         if (min != i)
