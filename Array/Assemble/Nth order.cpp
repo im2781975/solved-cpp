@@ -1,7 +1,8 @@
-
+// find the k-th smallest element within a specified subarray of an array, given a set of queries.
 #include <bits/stdc++.h>
 using namespace std;
 void kth_elem(vector<int> arr, vector<int> q){
+    q[0] is The ending index & q[0] is the starting idx of the subarray (1-based index).
     if (q[1] > arr.size()){
         cout<<"List index is out of range"<<endl;
         return;
