@@ -13,14 +13,12 @@ void maxOverlap(vector<int>& start, vector<int>& end )
     memset(x, 0, sizeof x);
          
         int cur = 0, idx;
-        
         for(int i = 0; i < n; i++)
         { 
             //Lazy addition
             ++x[start[i]];
             --x[end[i]+1];
         }
-         
         int maxy = INT_MIN;
         for(int i = 0; i <= maxc; i++)
         {
@@ -33,11 +31,10 @@ void maxOverlap(vector<int>& start, vector<int>& end )
         }
         cout<<"Maximum value is "<<maxy<<" at position "<<idx<<endl;
 }
-
 int main() 
 {     
-    vector<int> start = {13, 28, 29, 14, 40, 17, 3}, end = {107, 95, 111, 105, 70, 127, 74};
-                     
+    vector<int> start = {13, 28, 29, 14, 40, 17, 3}, 
+    end = {107, 95, 111, 105, 70, 127, 74};
         maxOverlap(start,end);
     return 0;
 }
