@@ -1,8 +1,7 @@
 // sort an array after applying equation A*x*x + B*x + C
 #include<bits/stdc++.h>
 using namespace std;
-
-void sortArray(int arr[], int n, int A, int B, int C)
+void Array(int arr[], int n, int A, int B, int C)
 {
     for (int i = 0; i < n; i++)
         arr[i] = A*arr[i]*arr[i] + B*arr[i] + C;
@@ -41,17 +40,24 @@ void sortArray(int arr[], int n, int A, int B, int C)
     for (int i = 0; i < n ; i++)
         arr[i] = new_arr[i];
 }
+void applyEquation(int arr[], int n, int a, int b, int c) 
+{
+    for(int i=0; i<n; i++) 
+    {
+        arr[i] = a*arr[i]*arr[i] + b*arr[i] + c;
+    }
+}
 int main()
 {
     int arr[] = {-21 ,-15, 12, 13, 14 };
     int n = sizeof(arr) / sizeof(arr[0]);
     int A = -6, B =-7, C = 2;
  
-    sortArray(arr, n, A, B, C);
- 
+    Array(arr, n, A, B, C);
+    //applyEquation(arr, n, A, B, C);
     cout << "Array after sorting is : ";
     for (int i=0; i<n; i++)
        cout << arr[i] << " ";
- 
+    
     return 0;
 }
