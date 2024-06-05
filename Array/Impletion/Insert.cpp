@@ -16,6 +16,13 @@ int insertSorted(int arr[], int n, int key, int capacity)
     arr[i + 1] = key; 
     return (n + 1); 
 } 
+void insertElement(int arr[], int n, int x, int pos)
+{
+    //shift elements to the right which are on the right side of pos
+    for (int i = n - 1; i >= pos; i--)
+        arr[i + 1] = arr[i];
+    arr[pos] = x;
+}
 int main() 
 { 
     int arr[20]{ 12, 16, 20, 40, 50, 70 }; 
@@ -32,6 +39,15 @@ int main()
     cout << "\nAfter Insertion: "; 
     for (i = 0; i < n; i++) 
         cout << arr[i] << " "; 
+    //-----
+    int x = 10, pos = 2;
+    insertElement(arr, n, x, pos);
+    n++;
+ 
+    cout<<"\nAfter insertion : ";
+    for (int i = 0; i < n; i++)
+        cout<<arr[i]<<" ";
   
     return 0; 
 } 
+
