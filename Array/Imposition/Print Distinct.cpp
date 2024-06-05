@@ -1,7 +1,6 @@
 //print all distinct elements in a given array
 #include <bits/stdc++.h>
 using namespace std;
- 
 void printDistinct(int arr[], int n)
 {
     for (int i=0; i<n; i++)
@@ -26,6 +25,18 @@ void print_Distinct(int arr[], int n)
           i++;
     // print last occurrence of the current element
        cout << arr[i] << " ";
+    }
+}
+void printDistinct(int arr[],int n)
+{
+    unordered_set<int> s;
+    for (int i=0; i<n; i++)
+    {
+        if (!s.count(arr[i]))
+        {
+            s.insert(arr[i]);
+            cout << arr[i] << " ";
+        }
     }
 }
 int main()
