@@ -23,6 +23,16 @@ void insertElement(int arr[], int n, int x, int pos)
         arr[i + 1] = arr[i];
     arr[pos] = x;
 }
+int getInvCount(int arr[], int n)
+{
+    int inv_count = 0;
+    for (int i = 0; i < n - 1; i++)
+        for (int j = i + 1; j < n; j++)
+            if (arr[i] > arr[j])
+                inv_count++;
+ 
+    return inv_count;
+}
 int main() 
 { 
     int arr[20]{ 12, 16, 20, 40, 50, 70 }; 
@@ -47,7 +57,6 @@ int main()
     cout<<"\nAfter insertion : ";
     for (int i = 0; i < n; i++)
         cout<<arr[i]<<" ";
-  
+    cout << " Number of inversions are "<<getInvCount(arr, n);
     return 0; 
-} 
-
+}
