@@ -1,7 +1,6 @@
 // find equilibrium index of an array
 #include <bits/stdc++.h>
 using namespace std;
- 
 int equilibrium(int arr[], int n)
 {
     int i, j;
@@ -73,6 +72,18 @@ int equilibrium(int a[], int n)
     // points in it & return the vector
     return -1;
 }
+int pivotIndex(vector<int>& nums) {
+    int left = 0, pivot = 0, right = 0;
+    for (int i = 1; i < nums.size(); i++) {
+        right += nums[i];
+    }
+    while (pivot < nums.size() - 1 && right != left) {
+        pivot++;
+        right -= nums[pivot];
+        left += nums[pivot - 1];
+    }
+    return (left == right) ? pivot : -1;
+}
 int main()
 {
     int arr[] = { -7, 1, 5, 2, -4, 3, 0 };
@@ -80,5 +91,8 @@ int main()
  
     cout << equilibrium(arr,arr_size);
     cout<< "\n"<<Equilibrium(arr,arr_size);
+    vector<int> nums = {1, 7, 3, 6, 5, 6};
+    int result = pivotIndex(nums);
+    cout <<"First Point of equilibrium is at index "<< result << endl;
     return 0;
 }
