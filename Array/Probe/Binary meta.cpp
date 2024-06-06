@@ -31,6 +31,15 @@ int main(void)
 {
     vector<int> A = { -2, 10, 100, 250, 32315 };
     cout << bsearch(A, 10) << endl;
- 
+    
+    if (binary_search(arr.begin(), arr.end(), 15))
+        cout << "\n15 exists in vector";
+    else
+        cout <<"\n15 does not exist";
+
+    if (binary_search(arr.begin(), arr.end(), 23))
+        cout << "\n23 exists in vector";
+    else
+        cout << "\n23 does not exist";
     return 0;
 }
