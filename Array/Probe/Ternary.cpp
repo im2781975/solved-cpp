@@ -5,28 +5,19 @@ using namespace std;
 int ternarySearch(int l, int r, int key, int ar[])
 {
     while (r >= l) {
- 
         int mid1 = l + (r - l) / 3;
         int mid2 = r - (r - l) / 3;
  
-        if (ar[mid1] == key) {
+        if (ar[mid1] == key) 
             return mid1;
-        }
-        if (ar[mid2] == key) {
+        if (ar[mid2] == key)
             return mid2;
-        }
- 
-        // Since key is not present at mid,check in which region it is present
-        // then repeat the Search operationin that region
- 
-        if (key < ar[mid1]) {
+
+        if (key < ar[mid1])
             r = mid1 - 1;
-        }
-        else if (key > ar[mid2]) {
+        else if (key > ar[mid2])
             l = mid2 + 1;
-        }
         else {
-            // The key lies in between mid1 and mid2
             l = mid1 + 1;
             r = mid2 - 1;
         }
@@ -37,28 +28,21 @@ int ternarySearch(int l, int r, int key, int ar[])
 int TernarySearch(int l, int r, int key, int ar[])
 {
     if (r >= l) {
- 
-        // Find the mid1 and mid2
         int mid1 = l + (r - l) / 3;
         int mid2 = r - (r - l) / 3;
  
-        if (ar[mid1] == key) {
+        if (ar[mid1] == key)
             return mid1;
-        }
-        if (ar[mid2] == key) {
+        if (ar[mid2] == key)
             return mid2;
-        }
-        //Since key is not present at mid,check in which region it is present then repeat the Search operation in that region
-        if (key < ar[mid1]) {
-            return ternarySearch(l, mid1 - 1, key, ar);
-        }
-        else if (key > ar[mid2]) {
 
+        if (key < ar[mid1])
+            return ternarySearch(l, mid1 - 1, key, ar);
+            
+        else if (key > ar[mid2]) 
             return ternarySearch(mid2 + 1, r, key, ar);
-        }
-        else {
+        else 
             return ternarySearch(mid1 + 1, mid2 - 1, key, ar);
-        }
     }
     return -1;
 }
@@ -69,7 +53,6 @@ int main()
     l = 0;
     r = 9;
     key = 5;
-
     p = ternarySearch(l, r, key, ar);
     cout << "\nIndex of "<<key<<" is " << p ;
     key = 50;
