@@ -1,20 +1,16 @@
 #include <bits/stdc++.h>
 using namespace std;
- 
 // returns true if there is triplet with sum equal 
 // to 'sum' present in A[]. Also, prints the triplet 
-bool find3Numbers(int A[], int arr_size, int sum) 
+bool find3Numbers(int A[], int n, int sum) 
 {
     // Fix the first element as A[i] 
-    for (int i = 0; i < arr_size - 2; i++)
+    for (int i = 0; i < n - 2; i++)
     { 
- 
-        // Fix the second element as A[j] 
-        for (int j = i + 1; j < arr_size - 1; j++)
+        for (int j = i + 1; j < n - 1; j++)
         { 
- 
             // Now look for the third number 
-            for (int k = j + 1; k < arr_size; k++)
+            for (int k = j + 1; k < n; k++)
             { 
                 if (A[i] + A[j] + A[k] == sum)
                 { 
@@ -25,88 +21,60 @@ bool find3Numbers(int A[], int arr_size, int sum)
             } 
         } 
     } 
- 
-    // If we reach here, then no triplet was found 
     return false; 
 } 
-// Function to find a triplet with a given sum in an array
-bool find3Numbers(int A[], int arr_size, int sum)
+bool find3Numbers(int A[], int n, int sum)
 {
-    // Fix the first element as A[i]
-    for (int i = 0; i < arr_size - 2; i++) {
- 
-        // Create a set to store potential second elements
-        // that complement the desired sum
+    for (int i = 0; i < n - 2; i++) {
         unordered_set<int> s;
- 
-        // Calculate the current sum needed to reach the
-        // target sum
+        // Calculate the current sum needed to reach the target sum
         int curr_sum = sum - A[i];
- 
-        // Iterate through the subarray A[i+1..n-1] to find
-        // a pair with the required sum
         for (int j = i + 1; j < arr_size; j++) {
  
-            // Calculate the required value for the second
-            // element
-            int required_value = curr_sum - A[j];
- 
-            // Check if the required value is present in the
-            // set
-            if (s.find(required_value) != s.end()) {
- 
-                // Triplet is found; print the triplet
-                // elements
-                printf("Triplet is %d, %d, %d", A[i], A[j],
-                       required_value);
+            // Calculate the required value for the second element
+            int required = curr- A[j];
+            // Check if the required value is present in the set
+            if (s.find(required) != s.end()) {
+                cout << A[i] << " " << A[j] << " " << 
+                     required<< "\n";
                 return true;
             }
- 
-            // Add the current element to the set for future
-            // complement checks
+            // Add the current element to the set for future complement checks
             s.insert(A[j]);
         }
     }
- 
-    // If no triplet is found, return false
     return false;
 }
-// returns true if there is triplet with sum equal
-// to 'sum' present in A[]. Also, prints the triplet
-bool find3Numbers(int A[], int arr_size, int sum)
+bool find3Numbers(int A[], int n, int sum)
 {
     int l, r;
-    /* Sort the elements */
-    sort(A, A + arr_size);
-    /* Now fix the first element one by one and find the
-       other two elements */
-    for (int i = 0; i < arr_size - 2; i++) {
- 
-        // To find the other two elements, start two index
-        // variables from two corners of the array and move
-        // them toward each other
-        l = i + 1; // index of the first element in the
+    sort(A, A + n);
+    for (int i = 0; i < n - 2; i++)
+    {
+        l = i + 1; 
+        // index of the first element in the
         // remaining elements
-        r = arr_size - 1; // index of the last element
+        r = n - 1; 
+        // index of the last element
         while (l < r) {
             if (A[i] + A[l] + A[r] == sum) {
-                printf("Triplet is %d, %d, %d", A[i], A[l],A[r]);
+                cout << A[i] << " " << A[l] << " " << A[r] << "\n";
                 return true;
             }
             else if (A[i] + A[l] + A[r] < sum)
                 l++;
-            else // A[i] + A[l] + A[r] > sum
+            else 
+            // A[i] + A[l] + A[r] > sum
                 r--;
         }
     }
-    // If we reach here, then no triplet was found
     return false;
 }
 int main() 
 { 
     int A[] = { 1, 4, 45, 6, 10, 8 }; 
     int sum = 22; 
-    int arr_size = sizeof(A) / sizeof(A[0]); 
-    find3Numbers(A, arr_size, sum); 
+    int n = sizeof(A) / sizeof(A[0]); 
+    find3Numbers(A, n, sum); 
     return 0; 
 } 
