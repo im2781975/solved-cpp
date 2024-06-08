@@ -29,27 +29,23 @@ void subArraySum(int arr[], int n, int sum)
 }
 int sub_ArraySum(int arr[], int n, int sum)
 {
-    int currentSum = arr[0], start = 0, i;
-    //Add elements one by one to currentSum & if the currentSum exceeds the sum, then remove starting element 
+    int curSum = arr[0], start = 0, i;
     for (i = 1; i <= n; i++) {
-        while (currentSum > sum && start < i - 1) {
-            currentSum = currentSum - arr[start];
-            start++;
-        }
-        // If currentSum becomes equal to sum, then return true
-        if (currentSum == sum) {
+        if (i < n)
+            curSum += arr[i];
+        if (curSum == sum) {
             cout << "\nSum found between indexes " << start << " & " << i - 1;
             return 1;
         }
-        // Add this element to currentSum
-        if (i < n)
-            currentSum = currentSum + arr[i];
+        while (curSum > sum && start < i - 1) {
+            curSum = curSum - arr[start];
+            start++;
+        }
     }
     // If we reach here, then no subarray
     cout << "\nNo subarray found";
     return 0;
 }
-//print subarray with sum as given sum 
 vector<int>subarraySum(const vector<int>& arr, int sum)
 {
     unordered_map<int, int> map;
@@ -75,15 +71,14 @@ int main()
     
     vector<int> arr = { 15, 2, 4, 8, 9, 5, 10, 23 };
     vector<int> subarray=subarraySum(arr, 23);
-    if (subarray.empty()) {
+    if (subarray.empty()) 
         cout << "\nNo subarray with given sum found";
-    }
     else {
         cout << "Subarray: [ ";
         for (int i : subarray) {
             cout << i << " ";
-        }
         cout << "]";
+        }
     }
     return 0;
 }
