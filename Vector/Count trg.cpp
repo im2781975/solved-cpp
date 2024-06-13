@@ -1,40 +1,37 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-int countMatching(vector<int> arr, int b, int e, int target)
+bool countmatching(vector<int>vec, int l, int r, int trg)
 {
-    int m = (b + e) / 2;
-    if (e - b < 2)
+    int cnt = 0;
+    int mid = l + (r - l)/2;
+    if(r - l < 2)
     {
-        int count = 0;
-        if (arr[b] == target)
-            count++;
-            
-        if (arr[e] == target && b != e)
-            count++;
-            
-        return count;
+        if(vec[l] == trg)
+            cnt++;
+        if(vec[r] == trg && l!= r)
+            cnt++;
+        return cnt;
     }
-    else if (arr[m] > target)
-        return countMatching(arr, b, m - 1, target);
-        
-    else if (arr[m] < target)
-        return countMatching(arr, m + 1, e, target);
+    else if(vec[mid] == trg)
+    {
+        return countmatching(vec, l, mid-1, trg) + 1 + countmatching(vec, mid + 1, r, trg);
+    }
+    else if(vec[mid] < trg)
+        return countmatching(vec, mid + 1, r, trg);
     else
-        return countMatching(arr, b, m - 1, target) + 1 + countMatching(arr, m + 1, e, target);
+        return countmatching(vec, l, mid-1, trg);
 }
 int main()
 {
-    int n;
-    cin >> n; 
-    vector<int> arr(n);
-    for (int i = 0; i < n; i++)
-    {
-        cin >> arr[i];
-    }
-    int target; 
-    cin >> target;  
-    if (countMatching(arr, 0, arr.size() - 1, target) > 1)
-        cout << "\nYES" ;
+    int n; cin >> n;
+    vector <int> vec(n);
+    for(int i = 0; i < n; i++)
+        cin >> vec[i];
+    int trg;
+    cin >> trg;
+    sort(vec.begin(), vec.end());
+    if(countmatching(vec, 0, vec.size() -1, trg) > 0)
+        cout << "Yes," << trg << " is present in the arr";
     else
-        cout << "\nNO" ;
+        cout << "No,trg isn't present";
 }
