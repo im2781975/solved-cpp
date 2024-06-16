@@ -64,6 +64,7 @@ int checkPairSum(vector<int> X, int n, int targetSum)
     for(int i = 0; i < n; i++)
     {
         int k=false;
+     // For each element X[i], calculate its complement (targetSum - X[i]). Use the binarySearch function to check if this complement exists in the array X
         k = binarySearch(X, 0, n - 1, targetSum - X[i]);
         if (k == true)
             count++;
