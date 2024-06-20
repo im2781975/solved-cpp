@@ -27,10 +27,9 @@ int main() {
     string str;
     cout << "Enter a string: ";
     cin >> str;
-
     if (is_palindrome(str)) {
         cout << "Iterative: It's a palindrome!";
-    } else {
+    }else {
         cout << "Iterative: It's not a palindrome!" ;
     }
     if (is_palindrome_recursive(str)) {
@@ -38,5 +37,13 @@ int main() {
     } else {
         cout << "Recursive: It's not a palindrome!" ;
     }
+    //check whether two strings are anagram of each other
+    string A = "SILENT"; 
+    string B = "LISTEN"; 
+     
+    if ( is_permutation ( A.begin(), A.end(), B.begin() ) ) 
+        cout << "Anagrams" ; 
+    else
+        cout << "Not Anagrams" ; 
     return 0;
 }
