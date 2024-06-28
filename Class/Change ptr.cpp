@@ -1,25 +1,22 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
-class Test
-{
-    private:
+class test{
     int x;
     public:
-    Test(int x = 0){ 
-        this->x = x; 
+    test(int x = 0){
+        this->x = x;
     }
-    void change(Test *t){ 
-        *this = *t; 
-    } 
-    void print(){ 
-        cout << "x = " << x ; 
+    void change(test *t){
+        *this = *t;
+    }
+    void print(){
+        cout << "\nElements is: " << x;
     }
 };
-int main()
-{
-  Test obj(5);
-  Test *ptr = new Test(10);
-  obj.change(ptr);
-  obj.print();
-  return 0;
+int main(){
+    test t(5);
+    t.print();
+    test *ptr = new test(10);
+    t.change(ptr);
+    t.print();
 }
