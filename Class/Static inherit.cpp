@@ -1,24 +1,21 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
-
-class Test
-{
-    private:
-    int x;
-    int y;
+class Test{
+    int x, y;
     public:
-    Test(int x = 0, int y = 0) { this->x = x; this->y = y;
+    Test(int x = 0,int y = 0){
+        this->x = x;
+        this->y = y;
     }
-    static void fun1() { 
-        cout << "Inside fun1()"; 
+    static void Func1(){
+        cout << "Func1()";
     }
-    static void fun2() {
-        cout << "Inside fun2()"; fun1(); 
+    static void Func2(){
+        cout << "Func2()";
     }
 };
-int main()
-{
-  Test obj;
-  obj.fun2();
-  return 0;
+int main(){
+    Test t;
+    t.Func1();
+    t.Func2();
 }
