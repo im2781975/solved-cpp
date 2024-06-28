@@ -1,27 +1,22 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
-class Test
-{
-    private:
-    int x;
-    int y;
+class test{
+    int x, y;
     public:
-    Test(int x = 0, int y = 0) { this->x = x; this->y = y;
+    test(int x = 0, int y = 0){}
+    void setx(int a){
+        x = a;
     }
-    void setX(int a) { 
-        x = a; 
-    }
-    void setY(int b) { 
+    void sety(int b){
         y = b;
     }
-    void print() { 
-      cout << "x = " << x << " y = " << y ;
+    void print(){
+        cout << "x: " << x << " y: " << y << "\n";
     }
 };
-int main()
-{
-  Test obj;
-  obj.print();
-  return 0;
+int main(){
+    test t;
+    t.setx(6);
+    t.sety(9);
+    t.print();
 }
-
