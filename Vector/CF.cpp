@@ -1,5 +1,6 @@
 #include<iostream>
 #include<vector>
+#include<climits>
 using namespace std;
 void TransmitterRadius(){
 //given a sequence of integers which was the positions of houses on a straight road. 
