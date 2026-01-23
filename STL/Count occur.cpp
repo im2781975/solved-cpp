@@ -12,21 +12,7 @@ void print(map<int, int> mp)
 
 int main()
 {
-    map<int, int> mp;
-    int n;
-    cin >> n;
-
-    for (int i = 0; i < n; i++)
-    {
-        int x;
-        
-        //insert key elements.
-        cin >> x;
-        //update value elements which is depend over key.
-        mp[x]++;
-    }
-    print(mp);
-    return 0;
+    
 
     string s;
     cin >> s;
